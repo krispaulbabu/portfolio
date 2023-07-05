@@ -13,23 +13,22 @@
 body {
     height: 100%;
     margin: 0;
-    background: linear-gradient(#e4d7d7, #ffffff);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background: linear-gradient(#e4d7d7, #ffffff); */
+    background-color: black;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
 }
 
 .descriptionContainer{
-  background-color: white;
-  border-width: .5px;
-  border-color: black;
+  background-color: rgb(255, 255, 255);
   font-size: 30px;
   margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 20px;
   padding-top: 20px;
-  padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-bottom: 500px;
   text-align: center;
 }
@@ -40,10 +39,26 @@ body {
 }
 
 .description{
-  border-width: 3px;
-  font-size: medium;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 a{
-  color: rgb(26, 14, 255);
+  color: rgba(126, 120, 244, 0.726);
+  transition-duration: 500ms;
+}
+
+a:hover{
+  color: rgb(255,255,255);
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+}
+
+.doors{
+  display: flex;
+  flex-direction: row;
+  margin-left: 300px;
+  margin-bottom: 50px;
 }
