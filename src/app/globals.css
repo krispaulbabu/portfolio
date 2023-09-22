@@ -10,6 +10,29 @@
   }
 } */
 
+/* Home page css stuff */
+.hpBody{
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hpHeader{
+  color: white;
+  margin-top: 50px;
+  font-size: 50px;
+  border-width: 2px;
+  text-align: center;
+}
+
+.hpDescription{
+  color: white;
+  border-width: 2px;
+  text-align: center;
+}
+
+
 body {
     height: 100%;
     margin: 0;
@@ -45,20 +68,29 @@ body {
   margin-bottom: 10px;
 }
 
-a{
+.link{
   color: rgba(126, 120, 244, 0.726);
   transition-duration: 500ms;
 }
 
-a:hover{
+.link:hover{
   color: rgb(255,255,255);
   transition-duration: 500ms;
   background-color: rgb(126, 120, 244, 0.726);
 }
 
-.doors{
-  display: flex;
-  flex-direction: row;
-  margin-left: 300px;
-  margin-bottom: 50px;
+table{
+  border: 1px solid black;
+  font-size: medium;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 200px;
+  font-weight: 100;
+}
+
+tbody,tr, td{
+  border: 1px solid black;
+  font-size: medium;
+  padding-left: 10px;
+  padding-right: 10px;
 }
