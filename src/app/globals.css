@@ -10,38 +10,206 @@
   }
 } */
 
+body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+}
+
 /* Home page css stuff */
 .hpBody{
-  border-width: 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 80px;
 }
 
 .hpHeader{
   color: white;
-  margin-top: 50px;
   font-size: 50px;
-  border-width: 2px;
-  text-align: center;
+  margin-left: 100px;
+  margin-bottom: 25px;
 }
 
 .hpDescription{
   color: white;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 500px;
+  border-right-width: 2px;
+  padding-right: 25px;
+}
+
+/* mood charter page stuff */
+
+.moodCharter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-width: 2px;
-  text-align: center;
+  background-color: white;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+  border-radius: 30px;
+  padding-top: 100px;
 }
 
-
-body {
-    height: 100%;
-    margin: 0;
-    /* background: linear-gradient(#e4d7d7, #ffffff); */
-    background-color: black;
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
+.ratingScale{
+  margin-top: 50px;
+  border-radius: 50px;
+  display: flex;
+  gap: 100px;
+  margin-bottom: 100px;
+  
 }
 
+.rate1{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate2{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate3{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate4{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate5{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate1:hover{
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate2:hover{
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate3:hover{
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate4:hover{
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate5:hover{
+  transition-duration: 500ms;
+  background-color: rgb(126, 120, 244, 0.726);
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate1Clicked{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate2Clicked{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate3Clicked{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate4Clicked{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.rate5Clicked{
+  border-width: 2px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* monty hall problem page stuff */
 .descriptionContainer{
   background-color: rgb(255, 255, 255);
   font-size: 30px;
@@ -87,10 +255,10 @@ table{
   margin-left: 200px;
   font-weight: 100;
 }
-
+/* 
 tbody,tr, td{
   border: 1px solid black;
   font-size: medium;
   padding-left: 10px;
   padding-right: 10px;
-}
+} */
