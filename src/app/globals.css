@@ -40,6 +40,16 @@ body {
   padding-right: 25px;
 }
 
+/* Book finder page */
+.bookFinder{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#bookSearch{
+  margin-top: 100px;
+}
 /* monty hall problem page stuff */
 .descriptionContainer{
   background-color: rgb(255, 255, 255);
