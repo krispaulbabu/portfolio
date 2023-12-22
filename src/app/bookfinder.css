@@ -66,7 +66,18 @@ body {
 #collection{
   border-width: 2px;
   background-color: white;
-  padding: 50px;
+  padding-bottom: 20px;
+  position: absolute;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#collectionImage{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 100px;
 }
 
 #bookSearch:focus{

@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import CloseIcon from "@mui/icons-material/Close";
+import ReactDOM from "react-dom";
 
 let bookCollection = new Array();
 
@@ -12,7 +13,7 @@ export default function Bookfinder() {
   const [result, setResult] = useState([]);
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
-  const [iconHover, setHover]=useState(null)
+  const [iconHover, setHover]=useState("")
 
   const iconRef=useRef(null)
 
@@ -112,28 +113,42 @@ export default function Bookfinder() {
   }
 
   function renderCollection() {
-    return (
-      <div id="collection">
+    if(bookCollection.length!=0){
+      return (
+        <div id="collection">
         {bookCollection.map((books) => (
           <>
             {/* <label style={{color:"black"}}>{books["id"]}</label><br/> */}
             <img
+              id="collectionImage"
               src={
                 typeof books["volumeInfo"]["imageLinks"] != "undefined"
-                  ? "https://books.google.com/books/publisher/content/images/frontcover/" +
-                    books["id"] +
-                    "?fife=w20-h50&source=gbs_api"
+                  ? books["volumeInfo"]["imageLinks"]["thumbnail"]
                   : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
               }
             ></img>
+            <label> Something </label>
           </>
         ))}
       </div>
-    );
+      );
+    }
+    else return(
+      <div id="collection">
+        Your book collection is empty
+      </div>
+    )
   }
 
   useEffect(()=>{
-  },[])
+    if(iconHover=="true"){
+      ReactDOM.render(renderCollection(),document.getElementById("someId"))
+    }
+    if(iconHover=="false"){
+      ReactDOM.render(<></>,document.getElementById("someId"))
+    }
+
+  },[iconHover])
   return (
     <>
       <div className="bookFinder">
@@ -164,14 +179,17 @@ export default function Bookfinder() {
         <AutoStoriesIcon
           id="collectionButton"
           onMouseOver={()=>{
-            setHover(true)
+            setHover("true")
             console.log(iconHover)
           }}
           onMouseLeave={()=>{
-            setHover(false)
+            setHover("false")
             console.log(iconHover)
           }}
         />
+        <div id="someId">
+
+        </div>
         {renderResult()}
         {
 
