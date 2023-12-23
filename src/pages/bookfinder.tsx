@@ -1,6 +1,6 @@
 import { IconButton, Tooltip } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import "src/app/bookfinder.css";
+import "/src/app/bookfinder.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
