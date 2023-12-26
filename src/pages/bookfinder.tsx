@@ -5,7 +5,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Input } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import CloseIcon from "@mui/icons-material/Close";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import { createRoot } from 'react-dom/client';
 
 let bookCollection = new Array();
 
@@ -139,13 +140,18 @@ export default function Bookfinder() {
       </div>
     )
   }
-
   useEffect(()=>{
     if(iconHover=="true"){
-      ReactDOM.render(renderCollection(),document.getElementById("someId"))
+      const root=ReactDOM.createRoot(document.getElementById("someId") as HTMLElement);
+      root.render(<>
+      {renderCollection()}
+      </>)
+
     }
     if(iconHover=="false"){
-      ReactDOM.render(<></>,document.getElementById("someId"))
+      const root=ReactDOM.createRoot(document.getElementById("someId") as HTMLElement);
+      root.render(<>
+      </>)
     }
 
   },[iconHover])
@@ -188,7 +194,6 @@ export default function Bookfinder() {
           }}
         />
         <div id="someId">
-
         </div>
         {renderResult()}
         {

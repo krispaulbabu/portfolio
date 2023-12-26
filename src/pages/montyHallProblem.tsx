@@ -30,7 +30,7 @@ export default function montyHallProblem() {
             className="link"
             href="https://en.wikipedia.org/wiki/Let%27s_Make_a_Deal"
           >
-            <i> Let's make a deal </i>
+            <i> Let&apos;s make a deal </i>
           </a>
           The premise of the game is that the contestant is presented with three
           different doors. Behind 1 of the 3 doors is a car ( or a gift / prize
@@ -44,11 +44,11 @@ export default function montyHallProblem() {
         </p>
         <p className="description">
           Obviously, at first glance, the problem seems straightforward, you
-          might think that changing your choice after the reveal wouldn't really
+          might think that changing your choice after the reveal wouldn&apos;t really
           make much of a difference. However, stastically, switching your
           choice, increases your chances of winning to 2/3 as opposed to the 1/3
-          when you don't switch doors. To make things more understandable,
-          here's a table that lists three possible scenarios that could play
+          when you don&apos;t switch doors. To make things more understandable,
+          here&apos;s a table that lists three possible scenarios that could play
           out. Assume that the contestant picks door No.1 in all scenarios.
         </p>
         <table className="table">
@@ -105,12 +105,12 @@ export default function montyHallProblem() {
         <p className="description" style={{ marginTop: "20px" }}>
           As you can see in the above table, in 2/3 of the scenarios the
           contestant wins a car when they switch their choice and in 1/3 of the
-          scenarios the contestant wins a car when they don't switch their
+          scenarios the contestant wins a car when they don&apos;t switch their
           choice. The only scenario where switching choices backfires is if the
-          contestant's original choice was the door with the car.
+          contestant&apos;s original choice was the door with the car.
         </p>
         <p className="description">
-          To help better understand the problem, here's a simulation of the
+          To help better understand the problem, here&apos;s a simulation of the
           problem in python. 
         </p>
         <br />
