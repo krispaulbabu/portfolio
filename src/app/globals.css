@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 body {
   height: 100%;
   margin: 0;
@@ -19,9 +11,11 @@ body {
 /* Home page css stuff */
 .hpBody{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 80px;
+  justify-content: left;
 }
 
 .hpHeader{
@@ -31,65 +25,28 @@ body {
   margin-bottom: 25px;
 }
 
-.hpDescription{
+.descDiv{
+  display: flex;
   color: white;
   font-size: 20px;
   margin-left: 100px;
-  margin-right: 500px;
-  border-right-width: 2px;
+  margin-right: 215px;
   padding-right: 25px;
 }
 
-/* monty hall problem page stuff */
-.descriptionContainer{
-  background-color: rgb(255, 255, 255);
-  font-size: 30px;
-  margin-top: 50px;
-  margin-left: 100px;
-  margin-right: 100px;
-  border-radius: 20px;
-  padding-top: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 500px;
-  text-align: center;
+.projectList{
+  margin-left: 20px;
 }
 
-.descriptionHeader{
-  font-weight: 100;
-  padding-bottom: 10px;
-}
-
-.description{
-  font-size: 20px;
-  font-weight: 100;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.link{
-  color: rgba(126, 120, 244, 0.726);
-  transition-duration: 500ms;
-}
-
-.link:hover{
-  color: rgb(255,255,255);
-  transition-duration: 500ms;
-  background-color: rgb(126, 120, 244, 0.726);
-}
-
-table{
-  border: 1px solid black;
-  font-size: medium;
+.project{
+  background-color: white;
+  color:black;
+  font-size: 15px;
+  border-radius: 8px;
+  height:100px;
+  width:500px;
   padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 200px;
-  font-weight: 100;
+  padding-top: 10px;
+  display: flex;
+  
 }
-/* 
-tbody,tr, td{
-  border: 1px solid black;
-  font-size: medium;
-  padding-left: 10px;
-  padding-right: 10px;
-} */
