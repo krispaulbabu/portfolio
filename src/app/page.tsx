@@ -1,5 +1,4 @@
-import Image from "next/image";
-import airbnb from "/public/airbnb.png";
+
 export default function Home() {
   return (
     <>
@@ -41,7 +40,10 @@ export default function Home() {
           <a href="/main.html">
             <div className="project">
               <img src={"/airbnb.png"} style={{ width: 60, height:60, marginRight:"10px", marginTop:"10px", borderRadius:"15px"}} />
-              <h5>Airbnb Data exploration</h5>
+              <div style={{display:"flex", flexDirection:"column"}}>
+              <h5 style={{marginTop:"8px", fontWeight:500}}>Airbnb Data exploration</h5>
+              <p>An exploratory analysis of Airbnb data from kaggle.</p>
+              </div>
             </div>
             </a>
           </div>
