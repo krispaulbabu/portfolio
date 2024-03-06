@@ -42,7 +42,7 @@ export default function Home() {
               <img src={"/airbnb.png"} style={{ width: 60, height:60, marginRight:"10px", marginTop:"10px", borderRadius:"15px"}} />
               <div style={{display:"flex", flexDirection:"column"}}>
               <h5 style={{marginTop:"8px", fontWeight:500}}>Airbnb Data exploration</h5>
-              <p>An exploratory analysis of Airbnb data from kaggle.</p>
+              <p style={{fontSize:12, marginRight:"3px"}}>An exploratory analysis of Airbnb data from kaggle using python, jupyter notebook and tableau.</p>
               </div>
             </div>
             </a>
