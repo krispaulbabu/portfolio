@@ -57,7 +57,10 @@ export default function Home() {
                 }}
               />
 
-              <div className="overlay"></div>
+              <div className="overlay">
+                <h1 className="text">AirBnB Data Analysis</h1>
+                <p className="desc">An exploratory data analysis on an AirBnB dataset from Kaggle.</p>
+              </div>
             </div>
           </a>
           <div className="project"></div>

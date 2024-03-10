@@ -103,3 +103,51 @@ li{
   z-index: 1; 
   border-radius: 20px;
 }
+
+.project:hover .text {
+  font-weight: 500;
+  visibility: visible; /* Show the text when hovering over the project */
+  color:white;
+  position: absolute;
+  width:200px;
+  height: 100px;
+  transition: 0.5s;
+  transform: translate(8%,0%);
+}
+
+.text {
+  margin-top: 10px;
+  width:200px;
+  height: 100px;
+  position: absolute;
+  color: black;
+  position: absolute;
+  transform: translate(-100%,0%);
+  z-index: 2; /* Ensure the text appears above the overlay */
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.project:hover .desc {
+  font-weight: 200;
+  visibility: visible; /* Show the text when hovering over the project */
+  color:white;
+  position: absolute;
+  width:200px;
+  height: 100px;
+  transition: 0.5s;
+  transform: translate(8%,40%);
+}
+
+.desc {
+  margin-top: 10px;
+  width:200px;
+  height: 100px;
+  position: absolute;
+  color: black;
+  position: absolute;
+  transform: translate(-100%,40%);
+  z-index: 2; /* Ensure the text appears above the overlay */
+  visibility: hidden;
+  transition: 0.5s;
+}
