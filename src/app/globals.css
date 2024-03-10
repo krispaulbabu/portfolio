@@ -31,7 +31,7 @@ ul{
   display: flex;
   color:white;
   justify-content: center;
-  gap:300px;
+  gap:250px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -40,6 +40,10 @@ ul{
   position:fixed;
   top:0;
   left:8%;
+  margin-left: 50px;
+}
+
+li{
 }
 
 .descDiv{
@@ -54,34 +58,48 @@ ul{
   padding-left: 200px;
 }
 
-.projectList{
-  margin-left: 2vw;
+.projects{
+  height:785px;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  gap:80px;
+  margin-left: 190px;
+  margin-right: 190px;
+  padding-top: 150px;
 }
 
 .project{
-  background-color:rgba(75, 73, 73, 0.386);
-  transition-duration: 500ms;
-  color:white;
-  font-size: 15px;
-  border-radius: 8px;
-  height:13vh;
-  width:35vw;
-  padding-left: 1.5vw;
-  padding-top: 1.5vh;
-  display: flex;
-
-}
-.project:hover{
-  background-color:rgba(75, 73, 73, 0.921);
-  transition-duration: 500ms;
-  color:white;
-  font-size: 15px;
-  border-radius: 8px;
-  height:13vh;
-  width:35vw;
-  padding-left: 1.5vw;
-  padding-top: 1.5vh;
-  display: flex;
-
+  flex: 15%;
+  background-color: rgba(128, 128, 128, 0.158);
+  border-radius: 20px;
+  height:200px;
+  position: relative;
 }
 
+.project:hover .overlay{
+  height: 200px;
+  width:200px;
+  background-color: rgba(27, 0, 0, 0.636);
+  transition: .5s;
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1; 
+  border-radius: 20px;
+}
+
+.overlay{
+  height: 200px;
+  background-color: rgba(27, 0, 0, 0.636);
+  transition: .5s;
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  z-index: 1; 
+  border-radius: 20px;
+}
