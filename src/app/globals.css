@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
 body {
   height: 100%;
   margin: 0;
@@ -13,17 +16,30 @@ body {
   font-family: 'Inter';
   display: flex;
   flex-wrap: wrap;
+  height:785px;
+  align-items: center;
   justify-content: center;
-  margin-top: 80px;
-  justify-content: left;
 }
 
 .hpHeader{
   color: white;
   font-weight: 800;
   font-size: 50px;
-  margin-left: 100px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
+}
+ul{
+  display: flex;
+  color:white;
+  justify-content: center;
+  gap:300px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 200;
+  position:fixed;
+  top:0;
+  left:8%;
 }
 
 .descDiv{
@@ -31,25 +47,27 @@ body {
   color: white;
   font-size: 20px;
   font-weight: 100;
-  margin-left: 100px;
-  margin-right: 215px;
-  padding-right: 25px;
+  height: 785px;
+  align-items: center;
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
 .projectList{
-  margin-left: 20px;
+  margin-left: 2vw;
 }
 
 .project{
-  background-color:rgba(75, 73, 73, 0.422);
+  background-color:rgba(75, 73, 73, 0.386);
   transition-duration: 500ms;
   color:white;
   font-size: 15px;
   border-radius: 8px;
-  height:100px;
-  width:500px;
-  padding-left: 10px;
-  padding-top: 10px;
+  height:13vh;
+  width:35vw;
+  padding-left: 1.5vw;
+  padding-top: 1.5vh;
   display: flex;
 
 }
@@ -59,10 +77,10 @@ body {
   color:white;
   font-size: 15px;
   border-radius: 8px;
-  height:100px;
-  width:500px;
-  padding-left: 10px;
-  padding-top: 10px;
+  height:13vh;
+  width:35vw;
+  padding-left: 1.5vw;
+  padding-top: 1.5vh;
   display: flex;
 
 }
