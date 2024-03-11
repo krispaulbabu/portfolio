@@ -87,7 +87,7 @@ export default function Home() {
               textDecoration: "underline",
             }}
           >
-            https://www.linkedin.com/in/krispaulbabu4/
+            https://www.linkedin.com/in/krispaulbabu4
           </p>
         </a>
         <a href="mailto:krispaulbabukkp@gmail.com">

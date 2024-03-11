@@ -9,11 +9,12 @@ body {
   height: 100%;
   margin: 0;
   background-color: black;
+  font-family: 'Inter';
 }
 
 /* Home page css stuff */
 .hpBody{
-  font-family: 'Inter';
+
   display: flex;
   height:785px;
   align-items: center;
