@@ -12,14 +12,14 @@ export default function Home() {
           <a href="#projects">PROJECTS</a>
         </li>
         <li>
-          <a href="about.asp">CONTACT</a>
+          <a href="#contact">CONTACT</a>
         </li>
       </ul>
       <div className="hpBody" id="home">
         <h1 className="hpHeader"> Hi! I&apos;m Kris!</h1>
       </div>
       <div className="descDiv" id="about">
-        <p style={{}}>
+        <p style={{ paddingTop: "20px" }}>
           Hello there! Thanks for stopping by my portfolio. I&apos;m a
           21-year-old software developer originally from the UAE, and I recently
           completed my Bachelor of Science degree with a specialization in
@@ -59,7 +59,9 @@ export default function Home() {
 
               <div className="overlay">
                 <h1 className="text">AirBnB Data Analysis</h1>
-                <p className="desc">An exploratory data analysis on an AirBnB dataset from Kaggle.</p>
+                <p className="desc">
+                  An exploratory data analysis on an AirBnB dataset from Kaggle.
+                </p>
               </div>
             </div>
           </a>
@@ -71,6 +73,28 @@ export default function Home() {
           <div className="project"></div>
           <div className="project"></div>
         </div>
+      </div>
+      <div className="contact" id="contact">
+        <p className="info">+61412516044</p>
+        <a href="https://www.linkedin.com/in/krispaulbabu4/" target="_blank">
+          <p
+            className="info"
+            style={{
+              borderRightWidth: "1px",
+              borderLeftWidth: "1px",
+              paddingLeft: "100px",
+              paddingRight: "100px",
+              textDecoration: "underline",
+            }}
+          >
+            https://www.linkedin.com/in/krispaulbabu4/
+          </p>
+        </a>
+        <a href="mailto:krispaulbabukkp@gmail.com">
+          <p className="info" style={{ textDecoration: "underline" }}>
+            krispaulbabukkp@gmail.com
+          </p>
+        </a>
       </div>
     </>
   );
