@@ -15,7 +15,6 @@ body {
 .hpBody{
   font-family: 'Inter';
   display: flex;
-  flex-wrap: wrap;
   height:785px;
   align-items: center;
   justify-content: center;
@@ -30,18 +29,11 @@ body {
 
 ul{
   display: flex;
-  /* color:white; */
-  justify-content: center;
-  gap:250px;
+  gap:20vw;
   padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
   font-weight: 200;
   position:fixed;
   top:0;
-  left:8%;
-  margin-left: 50px;
 }
 
 li{
@@ -114,7 +106,7 @@ li:hover{
 
 .project:hover .text {
   font-weight: 500;
-  visibility: visible; /* Show the text when hovering over the project */
+  visibility: visible; 
   color:white;
   position: absolute;
   width:200px;
@@ -131,14 +123,14 @@ li:hover{
   color: black;
   position: absolute;
   transform: translate(-100%,0%);
-  z-index: 2; /* Ensure the text appears above the overlay */
+  z-index: 2;
   visibility: hidden;
   transition: 0.5s;
 }
 
 .project:hover .desc {
   font-weight: 200;
-  visibility: visible; /* Show the text when hovering over the project */
+  visibility: visible; 
   color:white;
   position: absolute;
   width:200px;
@@ -155,7 +147,7 @@ li:hover{
   color: black;
   position: absolute;
   transform: translate(-100%,40%);
-  z-index: 2; /* Ensure the text appears above the overlay */
+  z-index: 2; 
   visibility: hidden;
   transition: 0.5s;
 }

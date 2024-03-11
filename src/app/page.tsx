@@ -1,6 +1,7 @@
 export default function Home() {
   return (
     <>
+      <div className="hpBody" id="home">
       <ul>
         <li>
           <a href="#home">HOME</a>
@@ -15,7 +16,6 @@ export default function Home() {
           <a href="#contact">CONTACT</a>
         </li>
       </ul>
-      <div className="hpBody" id="home">
         <h1 className="hpHeader"> Hi! I&apos;m Kris!</h1>
       </div>
       <div className="descDiv" id="about">
