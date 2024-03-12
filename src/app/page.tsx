@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="hpHeader"> Hi! I&apos;m Kris!</h1>
       </div>
       <div className="descDiv" id="about">
-        <p style={{ paddingTop: "20px" }}>
+        <p>
           Hello there! Thanks for stopping by my portfolio. I&apos;m a
           21-year-old software developer originally from the UAE, and I recently
           completed my Bachelor of Science degree with a specialization in
