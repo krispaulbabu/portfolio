@@ -62,14 +62,19 @@ li:hover{
 
 .projects{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: .2fr .2fr .2fr .2fr;
   height: 100vh;
   place-items: center;
+  justify-content: center;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 
 .project{
-  background-color: rgba(30, 37, 38, 0.856);
+  background-color: rgba(32, 31, 31, 0.469);
   height:26vh;
   width:15vw;
   border-radius: 20%;
@@ -85,7 +90,7 @@ li:hover{
   height:26vh;
   width:15vw;
   border-radius: 20%;
-  background-color: rgba(30, 37, 38, 0.856);
+  background-color: rgba(32, 31, 31, 0.469);
   transition: .5s;
   position: absolute; 
   bottom: 0; 
@@ -108,6 +113,7 @@ li:hover{
 }
 
 .project:hover .text {
+  margin-left: .5vw;
   font-weight: 500;
   visibility: visible; 
   color:white;
@@ -119,7 +125,8 @@ li:hover{
 }
 
 .text {
-  margin-top: 10px;
+  margin-left: .5vw;
+  margin-top: 2vh;
   width:200px;
   height: 100px;
   position: absolute;
@@ -132,6 +139,8 @@ li:hover{
 }
 
 .project:hover .desc {
+  margin-top: 1.5vh;
+  margin-left: .5vw;
   font-weight: 200;
   visibility: visible; 
   color:white;
@@ -143,7 +152,8 @@ li:hover{
 }
 
 .desc {
-  margin-top: 10px;
+  margin-top: 1.5vh;
+  margin-left: .5vw;
   width:200px;
   height: 100px;
   position: absolute;
