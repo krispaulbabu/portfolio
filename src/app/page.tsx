@@ -1,7 +1,8 @@
 export default function Home() {
   return (
     <>
-      <div className="hpBody" id="home">
+    <div className="everything">
+    <div className="hpBody" id="home">
         <ul>
           <li>
             <a href="#home">HOME</a>
@@ -79,8 +80,10 @@ export default function Home() {
             style={{
               borderRightWidth: "1px",
               borderLeftWidth: "1px",
-              paddingLeft: "100px",
-              paddingRight: "100px",
+              paddingLeft: "10vw",
+              paddingRight: "10vw",
+              marginLeft: "10vw",
+              marginRight: "10vw",
               textDecoration: "underline",
             }}
           >
@@ -93,6 +96,7 @@ export default function Home() {
           </p>
         </a>
       </div>
+    </div>
     </>
   );
 }
