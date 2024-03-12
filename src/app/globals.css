@@ -30,7 +30,7 @@ body {
 
 ul{
   display: grid;
-  font-size:1.2vw;
+  font-size:1.2vh;
   grid-template-columns: .2fr .2fr .2fr .2fr;
   gap:15vw;
   padding-top: 20px;
