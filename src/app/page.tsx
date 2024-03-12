@@ -2,20 +2,20 @@ export default function Home() {
   return (
     <>
       <div className="hpBody" id="home">
-      <ul>
-        <li>
-          <a href="#home">HOME</a>
-        </li>
-        <li>
-          <a href="#about">ABOUT</a>
-        </li>
-        <li>
-          <a href="#projects">PROJECTS</a>
-        </li>
-        <li>
-          <a href="#contact">CONTACT</a>
-        </li>
-      </ul>
+        <ul>
+          <li>
+            <a href="#home">HOME</a>
+          </li>
+          <li>
+            <a href="#about">ABOUT</a>
+          </li>
+          <li>
+            <a href="#projects">PROJECTS</a>
+          </li>
+          <li>
+            <a href="#contact">CONTACT</a>
+          </li>
+        </ul>
         <h1 className="hpHeader"> Hi! I&apos;m Kris!</h1>
       </div>
       <div className="descDiv" id="about">
@@ -45,34 +45,31 @@ export default function Home() {
         </p>
       </div>
       <div className="projects" id="projects">
-        <div className="gallery">
+        <div className="project">
           <a href="/main.html">
-            <div className="project">
-              <img
-                src="airbnb.png"
-                style={{
-                  height: "200px",
-                  width: "200px",
-                  borderRadius: "20px",
-                }}
-              />
+            <img
+            className="projectImage"
+              src="airbnb.png"
+              style={{
+                borderRadius: "20%",
+              }}
+            />
 
-              <div className="overlay">
-                <h1 className="text">AirBnB Data Analysis</h1>
-                <p className="desc">
-                  An exploratory data analysis on an AirBnB dataset from Kaggle.
-                </p>
-              </div>
+            <div className="overlay">
+              <h1 className="text">AirBnB Data Analysis</h1>
+              <p className="desc">
+                An exploratory data analysis on an AirBnB dataset from Kaggle.
+              </p>
             </div>
           </a>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
         </div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
+        <div className="project"></div>
       </div>
       <div className="contact" id="contact">
         <p className="info">+61412516044</p>

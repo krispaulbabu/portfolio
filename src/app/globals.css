@@ -16,7 +16,7 @@ body {
 .hpBody{
 
   display: flex;
-  height:785px;
+  height:100vh;
   align-items: center;
   justify-content: center;
 }
@@ -35,6 +35,7 @@ ul{
   font-weight: 200;
   position:fixed;
   top:0;
+  z-index: 3;
 }
 
 li{
@@ -52,7 +53,7 @@ li:hover{
   color: white;
   font-size: 20px;
   font-weight: 100;
-  height: 785px;
+  height: 100vh;
   align-items: center;
   text-align: center;
   padding-right: 200px;
@@ -60,48 +61,50 @@ li:hover{
 }
 
 .projects{
-  height:785px;
-}
-
-.gallery{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap:80px;
-  margin-left: 190px;
-  margin-right: 190px;
-  padding-top: 150px;
+  height: 100vh;
+  place-items: center;
 }
 
+
 .project{
-  background-color: rgba(128, 128, 128, 0.158);
-  border-radius: 20px;
-  height:200px;
+  background-color: rgba(30, 37, 38, 0.856);
+  height:26vh;
+  width:15vw;
+  border-radius: 20%;
   position: relative;
 }
 
+.projectImage{
+  height:26vh;
+  width:15vw;
+}
+
 .project:hover .overlay{
-  height: 200px;
-  width:200px;
-  background-color: rgba(27, 0, 0, 0.636);
+  height:26vh;
+  width:15vw;
+  border-radius: 20%;
+  background-color: rgba(30, 37, 38, 0.856);
   transition: .5s;
   position: absolute; 
   bottom: 0; 
   left: 0; 
   width: 100%; 
   z-index: 1; 
-  border-radius: 20px;
 }
 
 .overlay{
-  height: 200px;
-  background-color: rgba(27, 0, 0, 0.636);
+  height:26vh;
+  width:15vw;
+  border-radius: 20%;
+  background-color: rgba(30, 37, 38, 0.856);
   transition: .5s;
   position: absolute; 
   bottom: 0;
   left: 0;
   width: 0; 
   z-index: 1; 
-  border-radius: 20px;
 }
 
 .project:hover .text {
