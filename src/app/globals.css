@@ -64,8 +64,8 @@ li:hover{
 }
 
 .gallery{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap:80px;
   margin-left: 190px;
   margin-right: 190px;
@@ -73,7 +73,6 @@ li:hover{
 }
 
 .project{
-  flex: 15%;
   background-color: rgba(128, 128, 128, 0.158);
   border-radius: 20px;
   height:200px;
