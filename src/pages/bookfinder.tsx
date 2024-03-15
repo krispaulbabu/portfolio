@@ -1,4 +1,4 @@
-import { IconButton, Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import "/src/app/bookfinder.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -6,7 +6,7 @@ import { Input } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import CloseIcon from "@mui/icons-material/Close";
 import ReactDOM from "react-dom/client";
-import { createRoot } from 'react-dom/client';
+import {CSSTransition} from 'react-transition-group';
 
 let bookCollection = new Array();
 
@@ -14,9 +14,9 @@ export default function Bookfinder() {
   const [result, setResult] = useState([]);
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
-  const [iconHover, setHover]=useState("")
+  const [iconHover, setHover] = useState("");
 
-  const iconRef=useRef(null)
+  const iconRef = useRef(null);
 
   useEffect(() => {
     if (book != null) {
@@ -30,8 +30,6 @@ export default function Bookfinder() {
       setSelected(null);
     }
   }, [book]);
-
-
 
   async function reqs(searchTerm: string) {
     try {
@@ -49,7 +47,6 @@ export default function Bookfinder() {
 
   function renderResult() {
     if (typeof result !== "undefined" && result.length !== 0) {
-      // console.log(result);
       return (
         <div id="bookContainer">
           {result.map((values) => (
@@ -114,47 +111,41 @@ export default function Bookfinder() {
   }
 
   function renderCollection() {
-    if(bookCollection.length!=0){
+    if (bookCollection.length != 0) {
       return (
         <div id="collection">
-        {bookCollection.map((books) => (
-          <>
-            {/* <label style={{color:"black"}}>{books["id"]}</label><br/> */}
-            <img
-              id="collectionImage"
-              src={
-                typeof books["volumeInfo"]["imageLinks"] != "undefined"
-                  ? books["volumeInfo"]["imageLinks"]["thumbnail"]
-                  : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
-              }
-            ></img>
-            <label> Something </label>
-          </>
-        ))}
-      </div>
+          {bookCollection.map((books) => (
+            <>
+              {/* <label style={{color:"black"}}>{books["id"]}</label><br/> */}
+              <img
+                id="collectionImage"
+                src={
+                  typeof books["volumeInfo"]["imageLinks"] != "undefined"
+                    ? books["volumeInfo"]["imageLinks"]["thumbnail"]
+                    : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
+                }
+              ></img>
+              <label> Something </label>
+            </>
+          ))}
+        </div>
       );
-    }
-    else return(
-      <div id="collection">
-        Your book collection is empty
-      </div>
-    )
+    } else return <div id="collection">Your book collection is empty</div>;
   }
-  useEffect(()=>{
-    if(iconHover=="true"){
-      const root=ReactDOM.createRoot(document.getElementById("someId") as HTMLElement);
-      root.render(<>
-      {renderCollection()}
-      </>)
-
+  useEffect(() => {
+    if (iconHover == "true") {
+      const root = ReactDOM.createRoot(
+        document.getElementById("someId") as HTMLElement
+      );
+      root.render(<>{renderCollection()}</>);
     }
-    if(iconHover=="false"){
-      const root=ReactDOM.createRoot(document.getElementById("someId") as HTMLElement);
-      root.render(<>
-      </>)
+    if (iconHover == "false") {
+      const root = ReactDOM.createRoot(
+        document.getElementById("someId") as HTMLElement
+      );
+      root.render(<></>);
     }
-
-  },[iconHover])
+  }, [iconHover]);
   return (
     <>
       <div className="bookFinder">
@@ -163,42 +154,40 @@ export default function Bookfinder() {
           perfect, you have to feel perfect about yourself—avoid trying to be
           something you’re not.” - The Lost Hero
         </label>
-        <Input
-          disableUnderline
-          startAdornment={<SearchIcon style={{ color: "#3e5c74" }} />}
-          endAdornment={<CloseIcon style={{ color: "#3e5c74" }} />}
-          className="bookSearch"
-          onChange={(reply) => {
-            if (reply.target.value.length !== 0) setInput(reply.target.value);
-          }}
-          onKeyDown={async (key) => {
-            if (key.key === "Enter" && input.length !== 0) {
-              console.log(input);
-              console.log(
-                "https://openlibrary.org/search.json?q=" +
-                  input.replaceAll(" ", "+")
-              );
-              reqs(input);
-            }
-          }}
-        />
-        <AutoStoriesIcon
-          id="collectionButton"
-          onMouseOver={()=>{
-            setHover("true")
-            console.log(iconHover)
-          }}
-          onMouseLeave={()=>{
-            setHover("false")
-            console.log(iconHover)
-          }}
-        />
-        <div id="someId">
+        <div id="input_button">
+          <Input
+            disableUnderline
+            startAdornment={<SearchIcon style={{ color: "black" }} />}
+            endAdornment={<CloseIcon style={{ color: "black" }} />}
+            className="bookSearch"
+            onChange={(reply) => {
+              if (reply.target.value.length !== 0) setInput(reply.target.value);
+            }}
+            onKeyDown={async (key) => {
+              if (key.key === "Enter" && input.length !== 0) {
+                console.log(input);
+                console.log(
+                  "https://openlibrary.org/search.json?q=" +
+                    input.replaceAll(" ", "+")
+                );
+                reqs(input);
+              }
+            }}
+          />
+          <AutoStoriesIcon
+            id="collectionButton"
+            onMouseOver={() => {
+              setHover("true");
+              console.log(iconHover);
+            }}
+            onMouseLeave={() => {
+              setHover("false");
+              console.log(iconHover);
+            }}
+          />
+          {renderResult()}
         </div>
-        {renderResult()}
-        {
-
-        }
+        <div id="someId"></div>
       </div>
     </>
   );

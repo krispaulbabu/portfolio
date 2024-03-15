@@ -78,10 +78,10 @@ export default function Home() {
           <p
             className="info"
             style={{
-              borderRightWidth: "1px",
-              borderLeftWidth: "1px",
-              paddingLeft: "10vw",
-              paddingRight: "10vw",
+              // borderRightWidth: "1px",
+              // borderLeftWidth: "1px",
+              paddingLeft: "5vw",
+              paddingRight: "5vw",
               marginLeft: "10vw",
               marginRight: "10vw",
               textDecoration: "underline",
