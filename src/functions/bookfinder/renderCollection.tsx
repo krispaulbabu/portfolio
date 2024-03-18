@@ -4,7 +4,7 @@ export default function renderCollection(bookCollection: any) {
       <div id="collectionMetadata">
         <h1 style={{ textAlign:"center", fontSize:"4vh", fontWeight:"1000", marginBottom:"5vh"}}>Your collection</h1>
         {bookCollection.map((books: any) => (
-          <div id="collectionBook">
+          <div id="collectionBook" key={books["id"]}>
             <img
               id="collectionImage"
               src={
