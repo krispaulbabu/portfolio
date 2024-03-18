@@ -29,7 +29,6 @@
     "react-dom": "18.2.0",
     "react-radio-buttons": "^1.2.2",
     "react-range": "^1.8.14",
-    "react-transition-group": "^1.2.1",
     "tailwindcss": "3.4.0",
     "typescript": "5.3.3"
   }
