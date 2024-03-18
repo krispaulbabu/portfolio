@@ -1,12 +1,16 @@
-import { Tooltip } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import "/src/app/bookfinder.css";
-import SearchIcon from "@mui/icons-material/Search";
+import { Button } from "@nextui-org/react";
+import ReactDOM from "react-dom/client";
+import { Tooltip } from "@mui/material";
 import { Input } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import CloseIcon from "@mui/icons-material/Close";
-import ReactDOM from "react-dom/client";
-import {CSSTransition} from 'react-transition-group';
+import renderCollection from "@/functions/bookfinder/renderCollection";
+import renderResult from "@/functions/bookfinder/renderResult";
+import reqs from "@/functions/bookfinder/reqs";
+
+import "/src/app/bookfinder.css";
 
 let bookCollection = new Array();
 
@@ -14,11 +18,25 @@ export default function Bookfinder() {
   const [result, setResult] = useState([]);
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
-  const [iconHover, setHover] = useState("");
+  const [collection, setCollection] = useState("collectionHidden");
 
   const iconRef = useRef(null);
+  const rootRef = useRef<null | ReactDOM.Root>(null);
+  const root = rootRef.current;
+
+  function setCollectionCss() {
+    if (collection == "collection" && root != null) {
+      setCollection("collectionHidden");
+    }
+    if (collection == "collectionHidden") {
+      setCollection("collection");
+    }
+  }
 
   useEffect(() => {
+    if(root!=null){
+      root.render(<>{renderCollection(bookCollection)}</>);
+    }
     if (book != null) {
       if (!bookCollection.includes(book)) {
         bookCollection = [...bookCollection, book];
@@ -29,123 +47,13 @@ export default function Bookfinder() {
       }
       setSelected(null);
     }
+    if (!rootRef.current) {
+      rootRef.current = ReactDOM.createRoot(
+        document.getElementsByClassName("collection")[0] as HTMLElement
+      );
+    }
   }, [book]);
 
-  async function reqs(searchTerm: string) {
-    try {
-      const response = await fetch(
-        "https://www.googleapis.com/books/v1/volumes?q=" +
-          searchTerm.replaceAll(" ", "+") +
-          "&maxResults=40"
-      );
-      const data = await response.json();
-      setResult(data.items);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  function renderResult() {
-    if (typeof result !== "undefined" && result.length !== 0) {
-      return (
-        <div id="bookContainer">
-          {result.map((values) => (
-            <div key={values["id"]} className="book">
-              <Tooltip
-                title={
-                  <>
-                    <b>Title: </b>
-                    {values["volumeInfo"]["title"]}
-                    <br />
-                    <b>Author: </b>
-                    {typeof values["volumeInfo"]["authors"] != "undefined"
-                      ? values["volumeInfo"]["authors"][0]
-                      : "No author"}
-                    <br />
-                    <b>Description: </b>
-                    <p
-                      style={{
-                        textOverflow: "ellipsis",
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {values["volumeInfo"]["description"]}
-                    </p>
-                  </>
-                }
-                followCursor
-                arrow
-              >
-                <img
-                  className="bookcover"
-                  onClick={() => {
-                    setSelected(values);
-                    // handleBookSelected();
-                    // console.log(bookCollection);
-                  }}
-                  src={
-                    typeof values["volumeInfo"]["imageLinks"] != "undefined"
-                      ? "https://books.google.com/books/publisher/content/images/frontcover/" +
-                        values["id"] +
-                        "?fife=w470-h600&source=gbs_api"
-                      : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
-                  }
-                ></img>
-              </Tooltip>
-              <label className="booktitle">
-                {" "}
-                {values["volumeInfo"]["title"]}{" "}
-              </label>{" "}
-              <br />
-              <label className="bookauthor">
-                {typeof values["volumeInfo"]["authors"] != "undefined"
-                  ? values["volumeInfo"]["authors"][0]
-                  : "No author"}
-              </label>
-            </div>
-          ))}
-        </div>
-      );
-    }
-  }
-
-  function renderCollection() {
-    if (bookCollection.length != 0) {
-      return (
-        <div id="collection">
-          {bookCollection.map((books) => (
-            <>
-              {/* <label style={{color:"black"}}>{books["id"]}</label><br/> */}
-              <img
-                id="collectionImage"
-                src={
-                  typeof books["volumeInfo"]["imageLinks"] != "undefined"
-                    ? books["volumeInfo"]["imageLinks"]["thumbnail"]
-                    : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
-                }
-              ></img>
-              <label> Something </label>
-            </>
-          ))}
-        </div>
-      );
-    } else return <div id="collection">Your book collection is empty</div>;
-  }
-  useEffect(() => {
-    if (iconHover == "true") {
-      const root = ReactDOM.createRoot(
-        document.getElementById("someId") as HTMLElement
-      );
-      root.render(<>{renderCollection()}</>);
-    }
-    if (iconHover == "false") {
-      const root = ReactDOM.createRoot(
-        document.getElementById("someId") as HTMLElement
-      );
-      root.render(<></>);
-    }
-  }, [iconHover]);
   return (
     <>
       <div className="bookFinder">
@@ -157,9 +65,11 @@ export default function Bookfinder() {
         <div id="input_button">
           <Input
             disableUnderline
-            startAdornment={<SearchIcon style={{ color: "black" }} />}
-            endAdornment={<CloseIcon style={{ color: "black" }} />}
+            startAdornment={<SearchIcon style={{ color: "white" }} />}
+            endAdornment={<CloseIcon style={{ color: "white" }} />}
             className="bookSearch"
+            placeholder='"Seek and you shall find." - Ralph Waldo Emerson'
+            style={{ fontFamily: "Inter", color:"white", paddingLeft:"20px" }}
             onChange={(reply) => {
               if (reply.target.value.length !== 0) setInput(reply.target.value);
             }}
@@ -170,24 +80,25 @@ export default function Bookfinder() {
                   "https://openlibrary.org/search.json?q=" +
                     input.replaceAll(" ", "+")
                 );
-                reqs(input);
+                reqs(input, setResult);
               }
             }}
           />
-          <AutoStoriesIcon
+          <Button
+            style={{ height: "6.5vh", width: "3.8vw" , outline:"none"}}
             id="collectionButton"
-            onMouseOver={() => {
-              setHover("true");
-              console.log(iconHover);
+            disableRipple
+            onPress={() => {
+              setCollectionCss();
             }}
-            onMouseLeave={() => {
-              setHover("false");
-              console.log(iconHover);
-            }}
-          />
-          {renderResult()}
+          >
+            <AutoStoriesIcon style={{height: "3vh", width: "2vw"}}></AutoStoriesIcon>
+          </Button>
+          {renderResult(result, setSelected)}
         </div>
-        <div id="someId"></div>
+        <div id={collection} className="collection">
+          <h1 style={{ textAlign:"center", fontSize:"4vh", fontWeight:"1000"}}>Your collection</h1>
+        </div>
       </div>
     </>
   );

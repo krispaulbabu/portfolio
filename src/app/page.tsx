@@ -78,8 +78,6 @@ export default function Home() {
           <p
             className="info"
             style={{
-              // borderRightWidth: "1px",
-              // borderLeftWidth: "1px",
               paddingLeft: "5vw",
               paddingRight: "5vw",
               marginLeft: "10vw",
@@ -99,4 +97,4 @@ export default function Home() {
     </div>
     </>
   );
-}
+} 
