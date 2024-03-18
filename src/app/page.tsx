@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <>
@@ -50,13 +48,13 @@ export default function Home() {
       <div className="projects" id="projects">
         <div className="project">
           <a href="/main.html">
-            <Image
-            className="proejctImage"
-            src="/airbnb.png"
+            <img
+            className="projectImage"
             alt="an image of the airbnb logo"
-            height={100}
-            width={160}
-            style={{borderRadius: "20%",}}
+              src="airbnb.png"
+              style={{
+                borderRadius: "20%",
+              }}
             />
 
             <div className="overlay">
