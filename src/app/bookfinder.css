@@ -81,7 +81,7 @@ body {
 }
 
 #collection{
-  background-color: rgb(38, 42, 47);
+  background-color: rgba(14, 17, 22, 0.635);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -91,7 +91,6 @@ body {
   overflow-y: overlay;
   color:white;
   transition: ease-in 0.5s;
-  border-right-width: 1px;
 }
 
 #collectionHidden{
@@ -110,14 +109,87 @@ body {
 }
 
 #collectionBook{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  /* gap: 1vw; */
-  padding-bottom: 1vh;
-  border-bottom-width: 1px;
-  border-bottom-color: grey;
-  margin-bottom: 1vh;
+  background: rgb(39,42,46);
+  border-radius: 2vh;
+  display: flex;
+  padding-bottom: 1.5vh;
+  padding-top: 1.5vh;
+  margin-top: 2vh;
+  gap: 1.5vh;
+  transition: 0.5s;
+  overflow-x: hidden;
 }
+
+#omm{
+  display: flex;
+  justify-content: center;
+}
+
+#omm:hover #collectionBook{
+  background: rgb(39,42,46);
+  border-radius: 2vh;
+  display: flex;
+  padding-bottom: 1.5vh;
+  padding-top: 1.5vh;
+  margin-bottom: 2vh;
+  margin-right: 1vw;
+  margin-top: 2vh;
+  gap: 1.5vh;
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+
+.deleteButton{
+  outline: none;
+  height:10vh;
+  width:0px;
+  background-color: rgba(255, 0, 0, 0.603);
+  transition: 0.5s;
+  overflow-x: hidden;
+  border-radius: 2vh;
+}
+
+.rateButton{
+  outline: none;
+  height:10vh;
+  width:0px;
+  background-color: rgba(255, 238, 0, 0.603);
+  transition: 0.5s;
+  overflow-x: hidden;
+  border-radius: 2vh;
+}
+
+.rateButtonClicked{
+  height:10vh;
+  width:100px;
+  background-color: rgba(255, 238, 0, 0.603);
+  transition: 0.5s;
+  overflow-x: hidden;
+  border-radius: 2vh;
+}
+
+#omm{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+#omm:hover .deleteButton{
+  height:10vh;
+  width:70px;
+  margin-bottom: 1vh;
+  transition: 0.5s;
+  margin-right: 1vw;
+}
+
+#omm:hover .rateButton{
+  height:10vh;
+  width:70px;
+  margin-bottom: 1vh;
+  transition: 0.5s;
+  margin-right: 1vw;
+}
+
 
 #collectionImage{
   height:8vh;
@@ -134,14 +206,13 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   overflow-y: overlay;
-  margin-bottom: 2vh;
   border-radius: 1vh;
 }
 
 .book{
   flex-basis: 20%;
   margin-top: 20px;
-  margin-left: 115px;
+  margin-left: 8vw;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   color: #3e5c74;

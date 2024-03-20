@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
 import ReactDOM from "react-dom/client";
-import { Tooltip } from "@mui/material";
 import { Input } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
@@ -19,6 +18,7 @@ export default function Bookfinder() {
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
+  const[rateMode, setRateMode]=useState("rateButton")
 
   const iconRef = useRef(null);
   const rootRef = useRef<null | ReactDOM.Root>(null);
@@ -35,7 +35,7 @@ export default function Bookfinder() {
 
   useEffect(() => {
     if(root!=null){
-      root.render(<>{renderCollection(bookCollection)}</>);
+      root.render(<>{renderCollection(bookCollection, setSelected,book, setRateMode, rateMode)}</>);
     }
     if (book != null) {
       if (!bookCollection.includes(book)) {
