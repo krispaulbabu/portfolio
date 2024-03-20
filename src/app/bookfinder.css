@@ -121,7 +121,8 @@ body {
 }
 
 #omm{
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr;
   justify-content: center;
 }
 
@@ -149,23 +150,16 @@ body {
   border-radius: 2vh;
 }
 
-.rateButton{
-  outline: none;
-  height:10vh;
-  width:0px;
-  background-color: rgba(255, 238, 0, 0.603);
+.instance:hover .rating{
+  opacity: 5;
   transition: 0.5s;
-  overflow-x: hidden;
-  border-radius: 2vh;
 }
 
-.rateButtonClicked{
-  height:10vh;
-  width:100px;
-  background-color: rgba(255, 238, 0, 0.603);
+.rating{
+  margin-left: 2vw;
+  opacity: 0;
   transition: 0.5s;
-  overflow-x: hidden;
-  border-radius: 2vh;
+
 }
 
 #omm{
@@ -176,18 +170,10 @@ body {
 
 #omm:hover .deleteButton{
   height:10vh;
-  width:70px;
+  width:10vw;
   margin-bottom: 1vh;
   transition: 0.5s;
-  margin-right: 1vw;
-}
-
-#omm:hover .rateButton{
-  height:10vh;
-  width:70px;
-  margin-bottom: 1vh;
-  transition: 0.5s;
-  margin-right: 1vw;
+  margin-right: .5vw;
 }
 
 

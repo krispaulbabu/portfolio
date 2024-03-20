@@ -18,7 +18,6 @@ export default function Bookfinder() {
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
-  const[rateMode, setRateMode]=useState("rateButton")
 
   const iconRef = useRef(null);
   const rootRef = useRef<null | ReactDOM.Root>(null);
@@ -35,7 +34,7 @@ export default function Bookfinder() {
 
   useEffect(() => {
     if(root!=null){
-      root.render(<>{renderCollection(bookCollection, setSelected,book, setRateMode, rateMode)}</>);
+      root.render(<>{renderCollection(bookCollection, setSelected,book)}</>);
     }
     if (book != null) {
       if (!bookCollection.includes(book)) {
