@@ -89,7 +89,6 @@ li:hover{
 }
 
 .projectImage{
-  height:20vh;
   width:11.5vw;
 }
 
@@ -172,14 +171,14 @@ li:hover{
 .contact{
   display: flex;
   height:8vh;
-  font-size: 1vw;
+  font-size: .8vw;
   color: white;
   flex-direction: column;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-weight: 200;
-  background-color: rgba(128, 128, 128, 0.156);
+  background-color: rgba(128, 128, 128, 0);
 }
 
 a{

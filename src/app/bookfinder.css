@@ -87,7 +87,7 @@ body {
   position: fixed;
   left:0;
   height:100vh;
-  width:25vw;
+  width:30vw;
   overflow-y: overlay;
   color:white;
   transition: ease-in 0.5s;
@@ -114,10 +114,12 @@ body {
   display: flex;
   padding-bottom: 1.5vh;
   padding-top: 1.5vh;
-  margin-top: 2vh;
-  gap: 1.5vh;
+  gap: 1.3vh;
   transition: 0.5s;
   overflow-x: hidden;
+  border-width: .1px;
+  border-color: rgba(255, 255, 255, 0.103);
+  width: 25vw;
 }
 
 #omm{
@@ -132,10 +134,8 @@ body {
   display: flex;
   padding-bottom: 1.5vh;
   padding-top: 1.5vh;
-  margin-bottom: 2vh;
   margin-right: 1vw;
-  margin-top: 2vh;
-  gap: 1.5vh;
+  gap: 1.3vh;
   transition: 0.5s;
   overflow-x: hidden;
 }
@@ -153,28 +153,34 @@ body {
 .instance:hover .rating{
   opacity: 5;
   transition: 0.5s;
+  transform: translateY(20%);
+  z-index: 1;
+  height:30px
 }
 
 .rating{
   margin-left: 2vw;
   opacity: 0;
   transition: 0.5s;
-
+  transform: translateY(-100%);
+  z-index: 1;
+  height:0px
 }
 
 #omm{
   display: flex;
   align-items: center;
   justify-items: center;
+  z-index: 2;
 }
 
 #omm:hover .deleteButton{
   height:10vh;
   width:10vw;
-  margin-bottom: 1vh;
   transition: 0.5s;
   margin-right: .5vw;
 }
+
 
 
 #collectionImage{

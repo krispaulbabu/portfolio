@@ -1,12 +1,18 @@
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
 import { Rating } from "@mui/material";
 
 export default function renderCollection(
   bookCollection: any,
   setSelected: any,
-  book: any
+  book: any,
+  idRatings: any,
+  setIdRatings: any,
+  handleRatingChange: any
 ) {
+  function setRating(id: string): number {
+    return idRatings[id] || .5;
+  }
+
   if (bookCollection.length != 0) {
     return (
       <>
@@ -22,7 +28,11 @@ export default function renderCollection(
         </h1>
         <div id="collectionMetadata">
           {bookCollection.map((books: any) => (
-            <div className="instance" key={books["id"]} style={{display:"flex", flexDirection:"column",gap:".5vh"}}>
+            <div
+              className="instance"
+              key={books["id"]}
+              style={{ display: "flex", flexDirection: "column", gap: ".5vh" }}
+            >
               <div id="omm">
                 <div id="collectionBook">
                   <img
@@ -73,11 +83,30 @@ export default function renderCollection(
               <Rating
                 className="rating"
                 name="hover-feedback"
-                value={5}
+                defaultValue={.5}
+                value={setRating(books["id"])}
                 precision={0.5}
+                onChange={(event, value) => {
+                  handleRatingChange(books["id"], value);
+                }}
               />
             </div>
           ))}
+          <Button
+            style={{
+              fontWeight:"1000",
+              height: "5vh",
+              width: "10vw",
+              backgroundColor: "rgba(0, 128, 0, 0.402)",
+              borderRadius: "1vh",
+              marginLeft: "10vw",
+              marginTop: "2vh",
+              marginBottom:"5vh"
+            }}
+            disableRipple
+          >
+            COMPILE
+          </Button>
         </div>
       </>
     );

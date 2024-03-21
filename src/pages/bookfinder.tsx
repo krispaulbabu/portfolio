@@ -18,6 +18,7 @@ export default function Bookfinder() {
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
+  const [idRatings, setIdRatings] = useState<Record<string, number>>({});
 
   const iconRef = useRef(null);
   const rootRef = useRef<null | ReactDOM.Root>(null);
@@ -32,17 +33,22 @@ export default function Bookfinder() {
     }
   }
 
+  const handleRatingChange = (id: string, value: number | null) => {
+    setIdRatings((prevIdRatings:any) => ({
+      ...prevIdRatings,
+      [id]: value || 0, 
+    }));
+  };
+
   useEffect(() => {
     if(root!=null){
-      root.render(<>{renderCollection(bookCollection, setSelected,book)}</>);
+      root.render(<>{renderCollection(bookCollection, setSelected,book,idRatings,setIdRatings,handleRatingChange)}</>);
     }
     if (book != null) {
       if (!bookCollection.includes(book)) {
         bookCollection = [...bookCollection, book];
-        console.log(bookCollection);
       } else {
         bookCollection = bookCollection.filter((item) => item !== book);
-        console.log(bookCollection);
       }
       setSelected(null);
     }
@@ -52,6 +58,12 @@ export default function Bookfinder() {
       );
     }
   }, [book]);
+
+  useEffect(() => {
+    if(root!=null){
+      root.render(<>{renderCollection(bookCollection, setSelected,book,idRatings,setIdRatings,handleRatingChange)}</>);
+    }
+  }, [idRatings]);
 
   return (
     <>
@@ -74,11 +86,6 @@ export default function Bookfinder() {
             }}
             onKeyDown={async (key) => {
               if (key.key === "Enter" && input.length !== 0) {
-                console.log(input);
-                console.log(
-                  "https://openlibrary.org/search.json?q=" +
-                    input.replaceAll(" ", "+")
-                );
                 reqs(input, setResult);
               }
             }}
