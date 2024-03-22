@@ -58,14 +58,32 @@ export default function Home() {
             />
 
             <div className="overlay">
-              <h1 className="text">AirBnB Data Analysis</h1>
+              <h1 className="text">AirBnB ED</h1>
               <p className="desc">
                 An exploratory data analysis on an AirBnB dataset from Kaggle.
               </p>
             </div>
           </a>
         </div>
-        <div className="project"></div>
+        <div className="project">
+        <a href="/bookfinder">
+            <img
+            className="projectImage"
+            alt="an image of the airbnb logo"
+              src="library.png"
+              style={{
+                borderRadius: "20%",
+              }}
+            />
+
+            <div className="overlay">
+              <h1 className="text">Book finder</h1>
+              <p className="desc">
+                A website that uses collaborative filtering to find you books.
+              </p>
+            </div>
+          </a>
+        </div>
         <div className="project"></div>
         <div className="project"></div>
         <div className="project"></div>

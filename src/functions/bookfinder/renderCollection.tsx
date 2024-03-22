@@ -1,5 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { Rating } from "@mui/material";
+// import Button from "@mui/material/Button";
 
 export default function renderCollection(
   bookCollection: any,
@@ -74,8 +75,7 @@ export default function renderCollection(
                 <Button
                   className="deleteButton"
                   style={{ fontWeight: "1000", fontSize: "1.5vh" }}
-                  disableRipple
-                  onPress={() => setSelected(books)}
+                  onClick={() => setSelected(books)}
                 >
                   Delete
                 </Button>
@@ -93,19 +93,19 @@ export default function renderCollection(
             </div>
           ))}
           <Button
+            disableRipple
             style={{
               fontWeight:"1000",
               height: "5vh",
               width: "10vw",
-              backgroundColor: "rgba(0, 128, 0, 0.402)",
+              backgroundColor: "rgba(97, 103, 217, 0.402)",
               borderRadius: "1vh",
               marginLeft: "10vw",
               marginTop: "2vh",
               marginBottom:"5vh"
             }}
-            disableRipple
           >
-            COMPILE
+            Find Books
           </Button>
         </div>
       </>
