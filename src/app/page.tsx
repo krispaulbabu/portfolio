@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -66,7 +68,7 @@ export default function Home() {
           </a>
         </div>
         <div className="project">
-        <a href="/bookfinder">
+        <Link href="/bookfinder">
             <img
             className="projectImage"
             alt="an image of the airbnb logo"
