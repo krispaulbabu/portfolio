@@ -84,7 +84,7 @@ export default function Home() {
                 A website that uses collaborative filtering to find you books.
               </p>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="project"></div>
         <div className="project"></div>
