@@ -135,7 +135,7 @@ li:hover{
   font-weight: 1000;
   width:12vw;
   margin-top: 2vh;
-  margin-left: 1vh;
+  margin-left: 1.5vh;
   font-size: 1vw;
   position: absolute;
   color: rgba(255, 255, 255, 0);
@@ -148,24 +148,23 @@ li:hover{
 .desc {
   visibility: hidden;
   margin-top: 5vh;
-  margin-left: 1vh;
-  width:12vw;
-  font-size: 1vw;
-  position: absolute;
-  color: rgba(255, 255, 255, 0);
-  position: absolute;
-  z-index: 2; 
-  visibility: hidden;
-  transition: 0.5s;
-}
-
-.project:hover .desc {
+  margin-left: 1.2vh;
+  margin-right: 2vh;
   width:12vw;
   font-size: 1vw;
   font-weight: 200;
+  position: absolute;
+  color: rgba(255, 255, 255, 0);
+  z-index: 2; 
+  visibility: hidden;
+  transition: 0.5s;
+  width: 10vw;
+}
+
+.project:hover .desc {
+  font-size: 1vw;
   visibility: visible; 
   color:white;
-  position: absolute;
   transition: 0.5s;
   /* transform: translate(8%,40%); */
 }
