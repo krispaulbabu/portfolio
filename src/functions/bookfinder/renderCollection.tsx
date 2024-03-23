@@ -79,10 +79,11 @@ export default function renderCollection(
                 </Button>
               </div>
               <Rating
+              emptyLabelText="rating"
                 className="rating"
                 name="hover-feedback"
-                defaultValue={.5}
-                value={idRatings[books["id"]] || 0.5}
+                defaultValue={1}
+                value={idRatings[books["id"]] || 1}
                 precision={1}
                 onChange={(event, value) => {
                   handleRatingChange(books["id"], value);
@@ -93,7 +94,7 @@ export default function renderCollection(
           <Button
             disableRipple
             onClick={()=>{
-              // console.log(idRatings)
+              console.log(idRatings)
               
             }}
             style={{

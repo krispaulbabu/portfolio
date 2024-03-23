@@ -3,6 +3,6 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/")
-def main():
-    return {"message": "Something"}
+@app.route("/api/python")
+def hello_world():
+    return "<p>What</p>"

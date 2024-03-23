@@ -20,7 +20,6 @@ export default function Bookfinder() {
   const [collection, setCollection] = useState("collectionHidden");
   const [idRatings, setIdRatings] = useState<Record<string, number>>({});
 
-  const iconRef = useRef(null);
   const rootRef = useRef<null | ReactDOM.Root>(null);
   const root = rootRef.current;
 
@@ -36,7 +35,7 @@ export default function Bookfinder() {
   const handleRatingChange = (id: string, value: number | null) => {
     setIdRatings((prevIdRatings:any) => ({
       ...prevIdRatings,
-      [id]: value || 0, 
+      [id]: value || 1, 
     }));
   };
 
