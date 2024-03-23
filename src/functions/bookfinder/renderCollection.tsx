@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { Rating } from "@mui/material";
-import { useState,useEffect } from "react";
+import { componentDidMount } from "./reqs";
 
 export default function renderCollection(
   bookCollection: any,
@@ -94,7 +94,8 @@ export default function renderCollection(
           <Button
             disableRipple
             onClick={()=>{
-              console.log(idRatings)
+              console.log("something else")
+              componentDidMount(idRatings)
               
             }}
             style={{
