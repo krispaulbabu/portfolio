@@ -49,11 +49,11 @@ export default function Home() {
       </div>
       <div className="projects" id="projects">
         <div className="project">
-          <a href="/main.html">
+          <a href="html/main.html">
             <img
             className="projectImage"
             alt="an image of the airbnb logo"
-              src="airbnb.png"
+              src="images/airbnb.png"
               style={{
                 borderRadius: "20%",
               }}
@@ -72,7 +72,7 @@ export default function Home() {
             <img
             className="projectImage"
             alt="an image of the airbnb logo"
-              src="library.png"
+              src="images/library.png"
               style={{
                 borderRadius: "20%",
               }}

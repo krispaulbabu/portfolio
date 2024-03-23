@@ -91,7 +91,7 @@ export default function Bookfinder() {
             }}
           />
           <Button
-            style={{ height: "6.5vh", width: "3.8vw" , outline:"none"}}
+            style={{ height: "6.5vh", width: "3.8vw" , outline:"none", cursor:"pointer"}}
             id="collectionButton"
             disableRipple
             onPress={() => {

@@ -5,32 +5,32 @@ export default function renderResult(result: any, setSelected: any) {
       <div id="bookContainer">
         {result.map((values: any) => (
           <div key={values["id"]} className="book">
-            <Tooltip
-              title={
-                <>
-                  <b>Title: </b>
-                  {values["volumeInfo"]["title"]}
-                  <br />
-                  <b>Author: </b>
-                  {typeof values["volumeInfo"]["authors"] != "undefined"
-                    ? values["volumeInfo"]["authors"][0]
-                    : "Unknown author"}
-                  <br />
-                  <b>Description: </b>
-                  <p
-                    style={{
-                      textOverflow: "ellipsis",
-                      overflow: "hidden",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {values["volumeInfo"]["description"]}
-                  </p>
-                </>
-              }
-              followCursor
-              arrow
-            >
+              <Tooltip
+                title={
+                  <>
+                    <b>Title: </b>
+                    {values["volumeInfo"]["title"]}
+                    <br />
+                    <b>Author: </b>
+                    {typeof values["volumeInfo"]["authors"] != "undefined"
+                      ? values["volumeInfo"]["authors"][0]
+                      : "Unknown author"}
+                    <br />
+                    <b>Description: </b>
+                    <p
+                      style={{
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {values["volumeInfo"]["description"]}
+                    </p>
+                  </>
+                }
+                followCursor
+                arrow
+              >
                 <img
                   className="bookcover"
                   onClick={() => {
@@ -44,13 +44,12 @@ export default function renderResult(result: any, setSelected: any) {
                       : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
                   }
                 />
-            </Tooltip>
-            <label className="booktitle">
-              {" "}
-              {values["volumeInfo"]["title"]}{" "}
-            </label>{" "}
-            <br />
-            <label className="bookauthor">
+              </Tooltip>
+              <label className="booktitle">
+                {" "}
+                {values["volumeInfo"]["title"]}{" "}
+              </label>
+              <label className="bookauthor">
               {typeof values["volumeInfo"]["authors"] != "undefined"
                 ? values["volumeInfo"]["authors"][0]
                 : "No author"}

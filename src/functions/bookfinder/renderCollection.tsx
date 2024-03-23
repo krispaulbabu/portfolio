@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { Rating } from "@mui/material";
-// import Button from "@mui/material/Button";
+import { useState,useEffect } from "react";
 
 export default function renderCollection(
   bookCollection: any,
@@ -10,9 +10,6 @@ export default function renderCollection(
   setIdRatings: any,
   handleRatingChange: any
 ) {
-  function setRating(id: string): number {
-    return idRatings[id] || .5;
-  }
 
   if (bookCollection.length != 0) {
     return (
@@ -64,6 +61,7 @@ export default function renderCollection(
                         fontWeight: "100",
                         fontSize: "1.8vh",
                         width: "15vw",
+                        transform:"translateY(-10px)"
                       }}
                     >
                       {typeof books["volumeInfo"]["authors"] != "undefined"
@@ -74,7 +72,7 @@ export default function renderCollection(
                 </div>
                 <Button
                   className="deleteButton"
-                  style={{ fontWeight: "1000", fontSize: "1.5vh" }}
+                  style={{ fontWeight: "1000", fontSize: "1.5vh",cursor:"pointer" }}
                   onClick={() => setSelected(books)}
                 >
                   Delete
@@ -84,8 +82,8 @@ export default function renderCollection(
                 className="rating"
                 name="hover-feedback"
                 defaultValue={.5}
-                value={setRating(books["id"])}
-                precision={0.5}
+                value={idRatings[books["id"]] || 0.5}
+                precision={1}
                 onChange={(event, value) => {
                   handleRatingChange(books["id"], value);
                 }}
@@ -94,8 +92,16 @@ export default function renderCollection(
           ))}
           <Button
             disableRipple
+            onClick={()=>{
+              // console.log(idRatings)
+              
+            }}
             style={{
+              cursor:"pointer",
+              color:"white",
+              borderWidth:"0px",
               fontWeight:"1000",
+              fontSize:"1.5vh",
               height: "5vh",
               width: "10vw",
               backgroundColor: "rgba(97, 103, 217, 0.402)",
