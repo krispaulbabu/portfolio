@@ -33,15 +33,26 @@ export default function Bookfinder() {
   }
 
   const handleRatingChange = (id: string, value: number | null) => {
-    setIdRatings((prevIdRatings:any) => ({
+    setIdRatings((prevIdRatings: any) => ({
       ...prevIdRatings,
-      [id]: value || 1, 
+      [id]: value || 1,
     }));
   };
 
   useEffect(() => {
-    if(root!=null){
-      root.render(<>{renderCollection(bookCollection, setSelected,book,idRatings,setIdRatings,handleRatingChange)}</>);
+    if (root != null) {
+      root.render(
+        <>
+          {renderCollection(
+            bookCollection,
+            setSelected,
+            book,
+            idRatings,
+            setIdRatings,
+            handleRatingChange
+          )}
+        </>
+      );
     }
     if (book != null) {
       if (!bookCollection.includes(book)) {
@@ -59,8 +70,19 @@ export default function Bookfinder() {
   }, [book]);
 
   useEffect(() => {
-    if(root!=null){
-      root.render(<>{renderCollection(bookCollection, setSelected,book,idRatings,setIdRatings,handleRatingChange)}</>);
+    if (root != null) {
+      root.render(
+        <>
+          {renderCollection(
+            bookCollection,
+            setSelected,
+            book,
+            idRatings,
+            setIdRatings,
+            handleRatingChange
+          )}
+        </>
+      );
     }
   }, [idRatings]);
 
@@ -79,7 +101,11 @@ export default function Bookfinder() {
             endAdornment={<CloseIcon style={{ color: "white" }} />}
             className="bookSearch"
             placeholder='"Seek and you shall find." - Ralph Waldo Emerson'
-            style={{ fontFamily: "Inter", color:"white", paddingLeft:"20px" }}
+            style={{
+              fontFamily: "Inter",
+              color: "white",
+              paddingLeft: "20px",
+            }}
             onChange={(reply) => {
               if (reply.target.value.length !== 0) setInput(reply.target.value);
             }}
@@ -90,19 +116,34 @@ export default function Bookfinder() {
             }}
           />
           <Button
-            style={{ height: "6.5vh", width: "3.8vw" , outline:"none", cursor:"pointer"}}
+            style={{
+              height: "6.5vh",
+              width: "3.8vw",
+              outline: "none",
+              cursor: "pointer",
+            }}
             id="collectionButton"
             disableRipple
             onPress={() => {
               setCollectionCss();
             }}
           >
-            <AutoStoriesIcon style={{height: "3vh", width: "2vw"}}></AutoStoriesIcon>
+            <AutoStoriesIcon
+              style={{ height: "3vh", width: "2vw" }}
+            ></AutoStoriesIcon>
           </Button>
           {renderResult(result, setSelected)}
-        </div>
-        <div id={collection} className="collection">
-          <h1 style={{ textAlign:"center", fontSize:"4vh", fontWeight:"1000"}}>Your collection</h1>
+          <div id={collection} className="collection">
+            <h1
+              style={{
+                textAlign: "center",
+                fontSize: "4vh",
+                fontWeight: "1000",
+              }}
+            >
+              Collection
+            </h1>
+          </div>
         </div>
       </div>
     </>

@@ -19,10 +19,9 @@ export default function renderCollection(
             textAlign: "center",
             fontSize: "4vh",
             fontWeight: "1000",
-            marginBottom: "5vh",
           }}
         >
-          Your collection
+          Collection
         </h1>
         <div id="collectionMetadata">
           {bookCollection.map((books: any) => (
@@ -126,10 +125,9 @@ export default function renderCollection(
             textAlign: "center",
             fontSize: "4vh",
             fontWeight: "1000",
-            marginBottom: "5vh",
           }}
         >
-          Your collection
+          Collection
         </h1>
       </>
     );

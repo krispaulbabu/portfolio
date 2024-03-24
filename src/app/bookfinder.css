@@ -83,17 +83,22 @@ body {
 }
 
 #collection{
-  background-color: rgba(14, 17, 22, 0.635);
+  background-color: rgb(14, 17, 22);
   display: flex;
   flex-direction: column;
   position: fixed;
   left:0;
   top:0;
-  height:100vh;
+  height:90vh;
   width:30vw;
   overflow-y: overlay;
   color:white;
   transition: ease-in 0.5s;
+  border: .5px solid white;
+  margin-top: 5vh;
+  margin-left: 3vw;
+  border-radius: 2vh;
+
 }
 
 #collectionHidden{
@@ -104,12 +109,16 @@ body {
   position: fixed;
   left:0;
   top:0;
-  height:100vh;
+  height:90vh;
   width:25vw;
   transform: translate(-100%,0%);
   overflow-y: overlay;
   color:white;
   transition-duration: 0.5s;
+  border: .5px solid white;
+  border-radius: 2vh;
+  margin-left: 3vw;
+  margin-top: 5vh;
 }
 
 #collectionBook{
