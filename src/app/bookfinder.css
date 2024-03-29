@@ -55,6 +55,8 @@ body {
 }
 
 #collectionButton{
+  outline: none;
+  cursor: pointer;
   grid-column: 2;
   margin-top: 40px;
   margin-left: 10px;
@@ -63,7 +65,7 @@ body {
   width: 50px;
   padding: 10px;
   border-radius: 10px;
-  background: transparent;
+  background-color: transparent;
   border-color: rgba(97, 103, 217);
   color: rgba(97, 103, 217);
   transition: 0.5s;

@@ -116,12 +116,6 @@ export default function Bookfinder() {
             }}
           />
           <Button
-            style={{
-              height: "6.5vh",
-              width: "3.8vw",
-              outline: "none",
-              cursor: "pointer",
-            }}
             id="collectionButton"
             disableRipple
             onPress={() => {
@@ -129,7 +123,9 @@ export default function Bookfinder() {
             }}
           >
             <AutoStoriesIcon
-              style={{ height: "3vh", width: "2vw" }}
+              style={{ 
+                width: "100%" 
+              }}
             ></AutoStoriesIcon>
           </Button>
           {renderResult(result, setSelected)}
