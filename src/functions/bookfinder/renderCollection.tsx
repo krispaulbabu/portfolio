@@ -30,7 +30,7 @@ export default function renderCollection(
               key={books["id"]}
               style={{ display: "flex", flexDirection: "column", gap: ".5vh" }}
             >
-              <div id="omm">
+              <div id="_instance">
                 <div id="collectionBook">
                   <Image
                     alt="book cover image"
@@ -74,6 +74,7 @@ export default function renderCollection(
                 </div>
                 <Button
                   className="deleteButton"
+                  disableRipple
                   style={{
                     fontWeight: "1000",
                     fontSize: "1.5vh",

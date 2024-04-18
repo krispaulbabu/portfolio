@@ -1,7 +1,6 @@
 import { Tooltip } from "@mui/material";
 import Image from "next/image";
 
-
 export default function renderResult(result: any, setSelected: any) {
   if (typeof result !== "undefined" && result.length !== 0) {
     return (
@@ -9,6 +8,9 @@ export default function renderResult(result: any, setSelected: any) {
         {result.map((values: any) => (
           <div key={values["id"]} className="book">
             <Tooltip
+              sx={{
+                width: "10px",
+              }}
               title={
                 <>
                   <b>Title: </b>
@@ -19,16 +21,19 @@ export default function renderResult(result: any, setSelected: any) {
                     ? values["volumeInfo"]["authors"][0]
                     : "Unknown author"}
                   <br />
-                  <b>Description: </b>
-                  <p
-                    style={{
-                      textOverflow: "ellipsis",
-                      overflow: "hidden",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {values["volumeInfo"]["description"]}
-                  </p>
+                  <div style={{display:"flex"}}>
+                    <b >Description:</b>
+                    <p
+                      style={{
+                        margin: 0,
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "noWrap",
+                      }}
+                    >
+                      {values["volumeInfo"]["description"]}
+                    </p>
+                  </div>
                 </>
               }
               followCursor
@@ -51,9 +56,7 @@ export default function renderResult(result: any, setSelected: any) {
                 }
               />
             </Tooltip>
-            <label className="booktitle">
-              {values["volumeInfo"]["title"]}
-            </label>
+            <label className="booktitle">{values["volumeInfo"]["title"]}</label>
             <label className="bookauthor">
               {typeof values["volumeInfo"]["authors"] != "undefined"
                 ? values["volumeInfo"]["authors"][0]

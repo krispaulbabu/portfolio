@@ -71,7 +71,7 @@ export default function Home() {
         <Link href="/bookfinder">
             <img
             className="projectImage"
-            alt="an image of the airbnb logo"
+            alt="An image of a library"
               src="images/library.png"
               style={{
                 borderRadius: "20%",

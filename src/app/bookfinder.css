@@ -95,11 +95,11 @@ body {
   width:30vw;
   overflow-y: overlay;
   color:white;
-  transition: ease-in 0.5s;
   border: .5px solid white;
   margin-top: 5vh;
   margin-left: 3vw;
   border-radius: 2vh;
+  transition-duration: .5s;
 
 }
 
@@ -113,10 +113,10 @@ body {
   top:0;
   height:90vh;
   width:25vw;
-  transform: translate(-100%,0%);
+  transform: translate(-200%,0%);
   overflow-y: overlay;
   color:white;
-  transition-duration: 0.5s;
+  transition-duration: .5s;
   border: .5px solid white;
   border-radius: 2vh;
   margin-left: 3vw;
@@ -137,13 +137,13 @@ body {
   width: 25vw;
 }
 
-#omm{
+#_instance{
   display: grid;
   grid-template-rows: 1fr;
   justify-content: center;
 }
 
-#omm:hover #collectionBook{
+#_instance:hover #collectionBook{
   background: rgb(39,42,46);
   border-radius: 2vh;
   display: flex;
@@ -186,14 +186,25 @@ body {
   height:0px
 }
 
-#omm{
+#_instance{
+  margin-left: 1vw;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  z-index: 2;
+  transition: 1s;
+}
+
+#_instance:hover{
+  transition: 1s;
+  margin-left: 2vw;
   display: flex;
   align-items: center;
   justify-items: center;
   z-index: 2;
 }
 
-#omm:hover .deleteButton{
+#_instance:hover .deleteButton{
   visibility: visible;
   height:10vh;
   width:10vw;

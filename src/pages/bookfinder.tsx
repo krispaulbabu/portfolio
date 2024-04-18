@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
 import ReactDOM from "react-dom/client";
 import { Input } from "@mui/material";
@@ -10,6 +10,7 @@ import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
 
 import "/src/app/bookfinder.css";
+import { ElementFlags } from "typescript";
 
 let bookCollection = new Array();
 
@@ -39,7 +40,7 @@ export default function Bookfinder() {
     }));
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (root != null) {
       root.render(
         <>
@@ -67,25 +68,8 @@ export default function Bookfinder() {
         document.getElementsByClassName("collection")[0] as HTMLElement
       );
     }
-  }, [book]);
-
-  useEffect(() => {
-    if (root != null) {
-      root.render(
-        <>
-          {renderCollection(
-            bookCollection,
-            setSelected,
-            book,
-            idRatings,
-            setIdRatings,
-            handleRatingChange
-          )}
-        </>
-      );
-    }
-  }, [idRatings]);
-
+  }, [book,idRatings]);
+  
   return (
     <>
       <div className="bookFinder">
@@ -96,9 +80,45 @@ export default function Bookfinder() {
         </label>
         <div id="input_button">
           <Input
+            id="search"
             disableUnderline
-            startAdornment={<SearchIcon style={{ color: "white" }} />}
-            endAdornment={<CloseIcon style={{ color: "white" }} />}
+            startAdornment={
+              <Button
+              disableRipple
+                style={{
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                  cursor: "pointer",
+                  outline:"none"
+                }}
+                onClick={() => reqs(input, setResult)}
+              >
+                <SearchIcon style={{ color: "white" }} />
+              </Button>
+            }
+            endAdornment={
+              <Button
+              disableRipple
+                onClick={() => {
+                  let element = document.getElementById("search");
+                  if (
+                    element instanceof HTMLInputElement ||
+                    element instanceof HTMLTextAreaElement ||
+                    element instanceof HTMLSelectElement
+                  ) {
+                    element.value = "";
+                  }
+                }}
+                style={{
+                  backgroundColor: "transparent",
+                  borderWidth: 0,
+                  cursor: "pointer",
+                  outline:"none"
+                }}
+              >
+                <CloseIcon style={{ color: "white" }} />
+              </Button>
+            }
             className="bookSearch"
             placeholder='"Seek and you shall find." - Ralph Waldo Emerson'
             style={{
@@ -123,8 +143,8 @@ export default function Bookfinder() {
             }}
           >
             <AutoStoriesIcon
-              style={{ 
-                width: "100%" 
+              style={{
+                width: "100%",
               }}
             ></AutoStoriesIcon>
           </Button>
