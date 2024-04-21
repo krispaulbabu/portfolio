@@ -49,7 +49,7 @@ export default function Home() {
       </div>
       <div className="projects" id="projects">
         <div className="project">
-          <a href="html/main.html">
+          <a href="https://public.tableau.com/app/profile/kris.paul/viz/AirBnBdata_17057060393650/Ratingsandpricebyneighbourhod" target="_blank">
             <img
             className="projectImage"
             alt="an image of the airbnb logo"

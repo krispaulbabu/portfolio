@@ -191,3 +191,9 @@ a:hover{
   color:rgb(118, 226, 251);
   transition-duration: 0.5s;
 }
+
+.tableauPlaceholder {
+  width: 100%;  /* Adjust the width as needed */
+  height: 600px; /* Adjust the height as needed */
+  position: relative;
+}

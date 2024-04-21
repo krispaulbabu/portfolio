@@ -1,9 +1,14 @@
-export default async function reqs(searchTerm: string, setResult:any) {
+export default async function reqs(searchTerm: string, setResult: any) {
+  console.log(
+    "https://www.googleapis.com/books/v1/volumes?q=" +
+      searchTerm.replaceAll(" ", "+") +
+      "&key=AIzaSyABXPFbtWePw25IMHgWtGCItN57X7fgv30"
+  );
   try {
     const response = await fetch(
       "https://www.googleapis.com/books/v1/volumes?q=" +
         searchTerm.replaceAll(" ", "+") +
-        "&maxResults=40"
+        "&key=AIzaSyABXPFbtWePw25IMHgWtGCItN57X7fgv30&maxResults=40"
     );
     const data = await response.json();
     setResult(data.items);
@@ -12,14 +17,13 @@ export default async function reqs(searchTerm: string, setResult:any) {
   }
 }
 
-export function componentDidMount(json:object) {
+export function componentDidMount(json: object) {
   const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(json),
-
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(json),
   };
-  fetch('http://krispaul17.pythonanywhere.com/api/add_message', requestOptions)
-      .then(response => response.json())
-      .then(data =>console.log(data));
+  fetch("http://krispaul17.pythonanywhere.com/api/add_message", requestOptions)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }

@@ -32,7 +32,8 @@ body {
   border-radius: 2px;
   padding: 1vh;
   border-color: #ffffff;
-  background-color: rgb(38, 42, 47);
+  /* background-color: rgb(38, 42, 47); */
+  background-color: #3e4756;
   transition: 0.5s;
 }
 
@@ -66,8 +67,8 @@ body {
   padding: 10px;
   border-radius: 10px;
   background-color: transparent;
-  border-color: rgba(97, 103, 217);
-  color: rgba(97, 103, 217);
+  border-color: #a2acbd;
+  color: #a2acbd;
   transition: 0.5s;
 }
 
@@ -79,13 +80,15 @@ body {
   width: 50px;
   padding: 10px;
   border-radius: 10px;
-  border-color: rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  border-color:#6e7888;
+  color: #6e7888;
   transition: 0.5s;
 }
 
 #collection{
-  background-color: rgb(14, 17, 22);
+  padding-top: 20px;
+  background-color: #6e7888a0;
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -95,17 +98,16 @@ body {
   width:30vw;
   overflow-y: overlay;
   color:white;
-  border: .5px solid white;
   margin-top: 5vh;
   margin-left: 3vw;
-  border-radius: 2vh;
+  border-radius: .5vh;
   transition-duration: .5s;
 
 }
 
 #collectionHidden{
   visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.347);
+  background-color: #6e7888a0;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -117,15 +119,14 @@ body {
   overflow-y: overlay;
   color:white;
   transition-duration: .5s;
-  border: .5px solid white;
   border-radius: 2vh;
   margin-left: 3vw;
   margin-top: 5vh;
 }
 
 #collectionBook{
-  background: rgb(39,42,46);
-  border-radius: 2vh;
+  background-color: #6e7888;
+  border-radius: .5vh;
   display: flex;
   padding-bottom: 1.5vh;
   padding-top: 1.5vh;
@@ -133,19 +134,18 @@ body {
   transition: 0.5s;
   overflow-x: hidden;
   border-width: .1px;
-  border-color: rgba(255, 255, 255, 0.103);
   width: 25vw;
 }
 
 #_instance{
   display: grid;
   grid-template-rows: 1fr;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 #_instance:hover #collectionBook{
-  background: rgb(39,42,46);
-  border-radius: 2vh;
+  background-color: #6e7888;
+  border-radius: .5vh;
   display: flex;
   padding-bottom: 1.5vh;
   padding-top: 1.5vh;
@@ -162,7 +162,7 @@ body {
   visibility: hidden;
   outline: none;
   height:10vh;
-  width:0px;
+  width:0vw;
   background-color: rgba(255, 0, 0, 0.603);
   transition: 0.5s;
   overflow-x: hidden;
@@ -173,6 +173,7 @@ body {
   opacity: 5;
   transition: 0.5s;
   transform: translateY(20%);
+  margin-bottom: 1vh;
   z-index: 1;
   height:30px
 }
@@ -222,7 +223,8 @@ body {
 }
 
 #bookContainer {
-  background-color: rgb(38, 42, 47);
+  /* background-color: rgb(38, 42, 47); */
+  background-color: #3e4756;
   width: 75vw;
   margin-top: 50px;
   display: grid;

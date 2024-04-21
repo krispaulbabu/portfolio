@@ -2,6 +2,7 @@ import { Button } from "@nextui-org/react";
 import { Rating } from "@mui/material";
 import { componentDidMount } from "./reqs";
 import Image from "next/image";
+import toTitleCase from "./titleCase";
 
 export default function renderCollection(
   bookCollection: any,
@@ -14,7 +15,7 @@ export default function renderCollection(
   if (bookCollection.length != 0) {
     return (
       <>
-        <h1
+        {/* <h1
           style={{
             textAlign: "center",
             fontSize: "4vh",
@@ -22,7 +23,7 @@ export default function renderCollection(
           }}
         >
           Collection
-        </h1>
+        </h1> */}
         <div id="collectionMetadata">
           {bookCollection.map((books: any) => (
             <div
@@ -56,7 +57,7 @@ export default function renderCollection(
                         width: "15vw",
                       }}
                     >
-                      {books["volumeInfo"]["title"]}
+                      {toTitleCase(books["volumeInfo"]["title"])}
                     </h1>
                     <p
                       style={{
@@ -127,7 +128,7 @@ export default function renderCollection(
   } else
     return (
       <>
-        <h1
+        {/* <h1
           style={{
             textAlign: "center",
             fontSize: "4vh",
@@ -135,7 +136,7 @@ export default function renderCollection(
           }}
         >
           Collection
-        </h1>
+        </h1> */}
       </>
     );
 }

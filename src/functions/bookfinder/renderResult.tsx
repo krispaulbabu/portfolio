@@ -1,5 +1,6 @@
 import { Tooltip } from "@mui/material";
 import Image from "next/image";
+import toTitleCase from "./titleCase";
 
 export default function renderResult(result: any, setSelected: any) {
   if (typeof result !== "undefined" && result.length !== 0) {
@@ -14,7 +15,7 @@ export default function renderResult(result: any, setSelected: any) {
               title={
                 <>
                   <b>Title: </b>
-                  {values["volumeInfo"]["title"]}
+                  {toTitleCase(values["volumeInfo"]["title"])}
                   <br />
                   <b>Author: </b>
                   {typeof values["volumeInfo"]["authors"] != "undefined"
@@ -56,7 +57,7 @@ export default function renderResult(result: any, setSelected: any) {
                 }
               />
             </Tooltip>
-            <label className="booktitle">{values["volumeInfo"]["title"]}</label>
+            <label className="booktitle">{toTitleCase(values["volumeInfo"]["title"])}</label>
             <label className="bookauthor">
               {typeof values["volumeInfo"]["authors"] != "undefined"
                 ? values["volumeInfo"]["authors"][0]

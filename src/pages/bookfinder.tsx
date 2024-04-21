@@ -150,7 +150,7 @@ export default function Bookfinder() {
           </Button>
           {renderResult(result, setSelected)}
           <div id={collection} className="collection">
-            <h1
+            {/* <h1
               style={{
                 textAlign: "center",
                 fontSize: "4vh",
@@ -158,7 +158,7 @@ export default function Bookfinder() {
               }}
             >
               Collection
-            </h1>
+            </h1> */}
           </div>
         </div>
       </div>
