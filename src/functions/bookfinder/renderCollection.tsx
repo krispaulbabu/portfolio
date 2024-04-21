@@ -15,15 +15,6 @@ export default function renderCollection(
   if (bookCollection.length != 0) {
     return (
       <>
-        {/* <h1
-          style={{
-            textAlign: "center",
-            fontSize: "4vh",
-            fontWeight: "1000",
-          }}
-        >
-          Collection
-        </h1> */}
         <div id="collectionMetadata">
           {bookCollection.map((books: any) => (
             <div
@@ -95,6 +86,11 @@ export default function renderCollection(
                 precision={1}
                 onChange={(event, value) => {
                   handleRatingChange(books["id"], value);
+                  for(let i=0; i<bookCollection.length; i++){
+                    if(bookCollection[i]["id"]==books["id"]){
+                      bookCollection[i]["rating"]=value
+                    }
+                  }
                 }}
               />
             </div>
@@ -102,8 +98,7 @@ export default function renderCollection(
           <Button
             disableRipple
             onClick={() => {
-              console.log("something else");
-              componentDidMount(idRatings);
+              console.log(bookCollection)
             }}
             style={{
               cursor: "pointer",
@@ -112,10 +107,10 @@ export default function renderCollection(
               fontWeight: "1000",
               fontSize: "1.5vh",
               height: "5vh",
-              width: "10vw",
+              width: "25vw",
+              marginLeft:"4.5vh",
               backgroundColor: "rgba(97, 103, 217, 0.402)",
               borderRadius: "1vh",
-              marginLeft: "10vw",
               marginTop: "2vh",
               marginBottom: "5vh",
             }}
@@ -128,15 +123,6 @@ export default function renderCollection(
   } else
     return (
       <>
-        {/* <h1
-          style={{
-            textAlign: "center",
-            fontSize: "4vh",
-            fontWeight: "1000",
-          }}
-        >
-          Collection
-        </h1> */}
       </>
     );
 }
