@@ -95,10 +95,11 @@ export default function renderCollection(
               />
             </div>
           ))}
-          <Button
-            disableRipple
+          <a href="/awkward">
+          <button
             onClick={() => {
-              console.log(bookCollection)
+              // console.log(bookCollection)
+              // componentDidMount(idRatings)
             }}
             style={{
               cursor: "pointer",
@@ -116,7 +117,8 @@ export default function renderCollection(
             }}
           >
             Find Books
-          </Button>
+          </button>
+          </a>
         </div>
       </>
     );

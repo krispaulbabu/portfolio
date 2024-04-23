@@ -222,8 +222,8 @@ body {
   margin-top: 1vh;
 }
 
+
 #bookContainer {
-  /* background-color: rgb(38, 42, 47); */
   background-color: #3e4756;
   width: 75vw;
   margin-top: 5vh;
@@ -231,6 +231,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   overflow-y: overlay;
   border-radius: .5vh;
+  padding-bottom: 5vh;
 }
 
 .book{
@@ -250,7 +251,7 @@ body {
   margin-top: 5vh;
   height: 40vh;
   width: 15vw;
-  border-radius: 20px;
+  border-radius: .5vw;
 }
 
 .bookcover:hover{
@@ -258,7 +259,7 @@ body {
   margin-top: 5vh;
   height: 40vh;
   width: 15vw;
-  border-radius: 20px;
+  border-radius: .2vw;
   cursor: pointer;
 }
 
