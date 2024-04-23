@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 export default function awkward() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const script = document.createElement("script");
     script.src = "https://tenor.com/embed.js";
     script.async = true;

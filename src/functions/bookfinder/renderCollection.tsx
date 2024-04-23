@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import { Rating } from "@mui/material";
 import { componentDidMount } from "./reqs";
 import Image from "next/image";
@@ -86,16 +86,16 @@ export default function renderCollection(
                 precision={1}
                 onChange={(event, value) => {
                   handleRatingChange(books["id"], value);
-                  for(let i=0; i<bookCollection.length; i++){
-                    if(bookCollection[i]["id"]==books["id"]){
-                      bookCollection[i]["rating"]=value
+                  for (let i = 0; i < bookCollection.length; i++) {
+                    if (bookCollection[i]["id"] == books["id"]) {
+                      bookCollection[i]["rating"] = value;
                     }
                   }
                 }}
               />
             </div>
           ))}
-          <a href="/awkward">
+          <Link href="/awkward">
           <button
             onClick={() => {
               // console.log(bookCollection)
@@ -109,7 +109,7 @@ export default function renderCollection(
               fontSize: "1.5vh",
               height: "5vh",
               width: "25vw",
-              marginLeft:"4.5vh",
+              marginLeft: "4.5vh",
               backgroundColor: "rgba(97, 103, 217, 0.402)",
               borderRadius: "1vh",
               marginTop: "2vh",
@@ -118,15 +118,12 @@ export default function renderCollection(
           >
             Find Books
           </button>
-          </a>
+          </Link>
+
         </div>
       </>
     );
-  } else
-    return (
-      <>
-      </>
-    );
+  } else return <></>;
 }
 
 const styles = {};
