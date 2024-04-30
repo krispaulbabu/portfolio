@@ -81,10 +81,12 @@ export default function Home() {
               href="https://public.tableau.com/app/profile/kris.paul/viz/AirBnBdata_17057060393650/Ratingsandpricebyneighbourhod"
               target="_blank"
             >
-              <img
+              <Image
+                height={100}
+                width={100}
                 className="projectImage"
                 alt="an image of the airbnb logo"
-                src="images/airbnb.png"
+                src="/images/airbnb.png"
                 style={{
                   borderRadius: "20%",
                 }}
@@ -100,10 +102,12 @@ export default function Home() {
           </div>
           <div className="project">
             <Link href="/bookfinder">
-              <img
+              <Image
+                height={100}
+                width={100}
                 className="projectImage"
                 alt="An image of a library"
-                src="images/library.png"
+                src="/images/library.png"
                 style={{
                   borderRadius: "20%",
                 }}

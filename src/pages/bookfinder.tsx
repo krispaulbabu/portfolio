@@ -10,7 +10,9 @@ import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
 
 import "/src/app/bookfinder.css";
-import { ElementFlags } from "typescript";
+
+// React.useLayoutEffect = React.useEffect 
+React.useEffect= React.useLayoutEffect
 
 let bookCollection = new Array();
 
@@ -40,7 +42,7 @@ export default function Bookfinder() {
     }));
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (root != null) {
       root.render(
         <>
