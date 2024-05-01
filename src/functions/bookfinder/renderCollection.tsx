@@ -95,7 +95,6 @@ export default function renderCollection(
               />
             </div>
           ))}
-          <Link href="/awkward">
           <button
             onClick={() => {
               // console.log(bookCollection)
@@ -118,8 +117,6 @@ export default function renderCollection(
           >
             Find Books
           </button>
-          </Link>
-
         </div>
       </>
     );

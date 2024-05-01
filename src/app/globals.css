@@ -7,8 +7,6 @@ html{
 }
 
 body {
-  height: 100%;
-  margin: 0;
   background-color: black;
   font-family: 'Inter';
 }
@@ -26,19 +24,36 @@ body {
   
 }
 
+.welcomeImage{
+  filter: grayscale(100%);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.hpBody:hover .welcomeImage{
+  filter: grayscale(0%);
+  transition: 0.5s;
+}
+
+
 .hpHeader{
   font-weight: 800;
   font-size: 50px;
   margin-bottom: 50px;
   color: white;
-  margin-right: 30vw;
+  margin-right: 5vw;
 }
 
 .menu{
   margin: 10px;
+  margin-top: 5vh;
   position:fixed;
   top: 0;
-  margin-top: 2vh;
+  z-index: 2;
+}
+
+#hamburger{
+  display: none;
 }
 
 ul{
@@ -57,14 +72,14 @@ ul{
 
 .menuItem{
   color:black;
-  font-size: 1.1rem;
+  font-size: 1.1vw;
   font-weight: 500;
   margin: .5vh;
 }
 
 .menuItem:hover{
   color:black;
-  font-size: 1.1rem;
+  font-size: 1.1vw;
   font-weight: 500;
 }
 
@@ -92,13 +107,25 @@ li:hover{
   padding-right: 5vw;
 }
 
+.descImage{
+  width: 30vw;
+  filter: grayscale(100%);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.descDiv:hover .descImage{
+  filter: grayscale(0%);
+  transition: 0.5s;
+}
+
 .description{
   margin-top: 10vh;
   margin-left: 5vw;
-  font-size: 1.2rem;
+  font-size: 1.5vw;
 }
 
-#data #uni #ml #proj{
+#data, #uni, #ml, #proj{
   transition: .5s;
 }
 .descDiv:hover #data{
@@ -138,21 +165,22 @@ li:hover{
 .project{
   background-color: rgba(32, 31, 31, 0.469);
   backdrop-filter: blur(5px);
-  height:20vh;
+  height:11.5vw;
   width:11.5vw;
   border-radius: 20%;
   position: relative;
 }
 
 .projectImage{
-  height:20vh;
+  height:11.5vw;
   width:11.5vw;
 }
 
 .project:hover .overlay{
   visibility: visible;
-  backdrop-filter: blur(10px);
-  height:20vh;
+  backdrop-filter: blur(1
+  px);
+  height:11.5vw;
   width:11.5vw;
   border-radius: 20%;
   background-color: rgba(32, 31, 31, 0.469);
@@ -166,7 +194,7 @@ li:hover{
 .overlay{
   visibility: hidden;
   text-align: center;
-  height:20vh;
+  height:11.5vw;
   width:11.5vw;
   border-radius: 20%;
   background-color: rgba(30, 37, 38, 0);
@@ -227,7 +255,7 @@ li:hover{
 
 .contact{
   display: flex;
-  height:8vh;
+  height:100vh;
   font-size: .8vw;
   color: white;
   flex-direction: column;
@@ -235,7 +263,57 @@ li:hover{
   justify-content: center;
   align-items: center;
   font-weight: 200;
-  background-color: rgba(128, 128, 128, 0);
+}
+
+#contactImage{
+  filter: grayscale(100%);
+  width:35vw;
+  margin-right: 5vw;
+  transition: 0.5s;
+}
+
+.contact:hover #contactImage{
+  filter: grayscale(0%);
+  transition: 0.5s;
+}
+#contactInfo{
+  row-gap: 8vh;
+  display: grid;
+  grid-template-columns: .1fr .1fr;
+}
+
+#email, #number, #linkedin{
+  font-size: 2em;
+  font-weight: 500;
+  width: 35vw;
+  height: 10vh;
+  align-items: center;
+  align-content: center;
+  padding-left: 2vw;
+}
+
+.contactIcon{
+  height: 10vh;
+  width: 5vw;
+  transition: 0.5s;
+}
+
+#callIcon:hover{
+  color: rgb(106, 230, 106);
+  transition: 0.5s;
+}
+
+#callIcon:hover #email{
+}
+
+#linkedinIcon:hover{
+  color:rgb(39,103,188);
+  transition: 0.5s;
+}
+
+#emailIcon:hover{
+  color:rgb(245, 123, 123);
+  transition: 0.5s;
 }
 
 a{
@@ -243,8 +321,7 @@ a{
   transition-duration: 0.5s;
 }
 
-a:hover{
-  color:rgb(118, 226, 251);
+.info:hover{
   transition-duration: 0.5s;
 }
 
@@ -252,4 +329,54 @@ a:hover{
   width: 100%;  /* Adjust the width as needed */
   height: 600px; /* Adjust the height as needed */
   position: relative;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .hpHeader{
+    margin-right: 0px;
+  }
+
+  #hamburger{
+    display: block;
+    height: 8vw;
+    width: 8vw;
+    border: 1px solid green;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #menuIcon{
+    color: white;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 0;
+    width: 100vw;
+    display: none;
+  }
+
+  li{
+    border: 1px solid green;
+    margin: 0;
+  }
+  .welcomeImage{
+    display:none
+  }
+
+  .descImage{
+    display:none
+  }
+
+  .description{
+    font-size: 3vw;
+    text-align: center;
+  }
 }
