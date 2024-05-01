@@ -10,7 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 export default function Home() {
-  const [menu, setMenu] = useState("none");
+  const [menu, setMenu] = useState("grid");
 
 
   return (
@@ -21,7 +21,7 @@ export default function Home() {
             <MenuIcon
               id="menuIcon"
               onClick={() => {
-                if(menu=="block"){
+                if (menu == "block") {
                   setMenu("none")
                 }
                 else setMenu("block");
@@ -29,7 +29,7 @@ export default function Home() {
             />
           </div>
           <div className="menu">
-            <ul style={{ display:menu}}>
+            <ul style={{ display: menu }}>
               <li>
                 <a className="menuItem" href="#home">
                   HOME
