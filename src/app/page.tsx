@@ -5,12 +5,15 @@ import Image from "next/image";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { AlternateEmail } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useScreenSize from "@/functions/useScreensize";
+
+
 
 export default function Home() {
   const [menu, setMenu] = useState("grid");
+
 
 
   return (
@@ -21,10 +24,9 @@ export default function Home() {
             <MenuIcon
               id="menuIcon"
               onClick={() => {
-                if (menu == "block") {
-                  setMenu("none")
-                }
-                else setMenu("block");
+                if (menu == "grid") {
+                  setMenu("none");
+                } else setMenu("grid");
               }}
             />
           </div>
@@ -66,7 +68,6 @@ export default function Home() {
           <div className="description">
             <p>
               Thanks for stopping by my portfolio. I&apos;m a 21-year-old
-              <br />
               <b id="data"> Data analyst</b> originally from the UAE, and I
               recently completed my Bachelor of Science degree with a
               specialization in Computing at{" "}
@@ -180,7 +181,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <a href="https://storyset.com/technology">
+      <a href="https://storyset.com/technology" style={{ fontSize: "1vh" }}>
         Technology illustrations by Storyset
       </a>
     </>
