@@ -308,7 +308,7 @@ a{
 @media only screen and (max-width: 1000px) {
 
   .hpBody{
-    background-image: url("/images/welcome-drawing.svg");
+    /* background-image: url("/images/welcome-drawing.svg"); */
     background-size: 300%;
     background-position-x: 43%;
   }
@@ -351,9 +351,11 @@ a{
 
   li{
     margin: 0;
+    margin-left: 1vw;
   }
 
   .menuItem{
+    padding-right: 100%;
     font-size: .8em;
     margin-right: 0;
 
