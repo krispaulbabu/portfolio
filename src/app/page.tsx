@@ -7,12 +7,20 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
-import useScreenSize from "@/functions/useScreensize";
 
 
 
 export default function Home() {
   const [menu, setMenu] = useState("grid");
+  
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        console.log("condition visited")
+        if(window.innerWidth>=1000){
+          setMenu("grid")
+        }
+    })
+  }, [])
 
 
 

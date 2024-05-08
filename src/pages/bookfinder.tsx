@@ -9,7 +9,7 @@ import renderCollection from "@/functions/bookfinder/renderCollection";
 import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
 
-import "/src/app/bookfinder.css";
+import "/src/css/bookfinder.css";
 
 // React.useLayoutEffect = React.useEffect 
 React.useEffect= React.useLayoutEffect

@@ -1,0 +1,21 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+#heading{
+  color: white;
+  font-size: 5em;
+  font-weight: 100;
+  width: 50vw;
+  text-align: left;
+  margin-left: 5vw;
+  margin-top: 15;
+}
+
+#section1{
+  border: 1px solid black;
+  height: 100vh;
+  background-image: url("/images/airbnbImage.jpg");
+  background-size: cover;
+}
