@@ -20,7 +20,7 @@ export async function componentDidMount(json: object) {
   };
 
   try {
-    const response = await fetch("http://krispaul17.pythonanywhere.com/api/bookresult", requestOptions);
+    const response = await fetch("https://krispaul17.pythonanywhere.com/api/bookresult", requestOptions);
     const data = await response.json(); // Converts the response body to JSON
     return data; // Return the data from the function
   } catch (error) {
