@@ -12,13 +12,19 @@ export default async function reqs(searchTerm: string, setResult: any) {
   }
 }
 
-export function componentDidMount(json: object) {
+export async function componentDidMount(json: object) {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(json),
   };
-  fetch("http://krispaul17.pythonanywhere.com/api/add_message", requestOptions)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+
+  try {
+    const response = await fetch("http://krispaul17.pythonanywhere.com/api/bookresult", requestOptions);
+    const data = await response.json(); // Converts the response body to JSON
+    return data; // Return the data from the function
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+    return null; // Return null or an appropriate error object/message
+  }
 }

@@ -9,6 +9,8 @@ import renderCollection from "@/functions/bookfinder/renderCollection";
 import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
 
+
+
 import "/src/css/bookfinder.css";
 
 // React.useLayoutEffect = React.useEffect 
@@ -18,6 +20,7 @@ let bookCollection = new Array();
 
 export default function Bookfinder() {
   const [result, setResult] = useState([]);
+  const [collectionResult, setCResult] =useState([]);
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
@@ -25,6 +28,8 @@ export default function Bookfinder() {
 
   const rootRef = useRef<null | ReactDOM.Root>(null);
   const root = rootRef.current;
+
+
 
   function setCollectionCss() {
     if (collection == "collection" && root != null) {
@@ -48,9 +53,9 @@ export default function Bookfinder() {
         <>
           {renderCollection(
             bookCollection,
-            setSelected,
             book,
             idRatings,
+            setSelected,
             setIdRatings,
             handleRatingChange
           )}

@@ -1,0 +1,21 @@
+.results{
+  display: grid;
+  grid-template-columns: .1fr .1fr .1fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5vw;
+  margin-right: 5vw;
+}
+
+.resultImage{
+  border-radius: 20px;
+}
+
+.title{
+  color: white;
+  margin-bottom: 0;
+}
+.author{
+  margin-top: 0;
+  color: grey;
+}
