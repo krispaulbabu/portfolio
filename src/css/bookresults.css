@@ -1,9 +1,14 @@
+body{
+  background-color: rgb(14,17,22);
+  font-family: 'Inter';
+}
 .results{
   display: grid;
   grid-template-columns: .1fr .1fr .1fr;
   align-items: center;
   justify-content: center;
   column-gap: 5vw;
+  font-family: 'Inter';
   margin-right: 5vw;
 }
 
