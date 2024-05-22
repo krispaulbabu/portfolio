@@ -16,7 +16,10 @@ const ResultsPage = () => {
     <>
       <div className="results">
         {results.map((values: any) => (
-          <div className="book">
+          <div 
+          className="book"
+          key={values["id"]}
+          >
             <Image
               className="resultImage"
               height={300}
