@@ -1,14 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "https://bookfinder.krispaulbabu.com"
-        }
-      ],
-      "destination": "https://bookfinder.com/bookfinder"
-    }
-  ]
+  "rewrites": [{ "source": "/bookfinder", "destination": "https://bookfinder.krispaulbabu.com" }]
 }
