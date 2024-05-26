@@ -11,9 +11,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/',
+        source: '/bookfinder',
         destination: '/bookfinder', 
-        basePath: false,
       },
     ];
   },
