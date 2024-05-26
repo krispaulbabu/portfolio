@@ -8,17 +8,14 @@ const nextConfig = {
       },
     ],
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
-        source: '/bookfinder',
-        destination: 'https://bookfinder.krispaulbabu.com',
-        permanent: false,
-        basePath: false,
+        source: "/bookfinder",
+        destination: "https://bookfinder.krispaulbabu.com",
       },
     ];
   },
-  
 }
 
 module.exports = nextConfig
