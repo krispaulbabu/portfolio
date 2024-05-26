@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/bookfinder", "destination": "https://bookfinder.krispaulbabu.com" }
+  ]
+}
