@@ -21,7 +21,7 @@ const nextConfig = {
                         value: 'bookfinder.krispaulbabu.com',
                     },
                 ],
-                destination: '/bookfinder/:path*',
+                destination: '/bookfinder',
             },
         ]
     }
