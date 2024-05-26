@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "bookfinder.krispaulbabu.com"
+        }
+      ],
+      "destination": "/bookfinder"
+    }
+  ]
+}
