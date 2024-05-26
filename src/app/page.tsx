@@ -134,7 +134,7 @@ export default function Home() {
             </a>
           </div>
           <div className="project">
-            <Link href="bookfinder.krispaulbabu.com">
+            <Link href="/bookfinder">
               <Image
                 height={100}
                 width={100}
