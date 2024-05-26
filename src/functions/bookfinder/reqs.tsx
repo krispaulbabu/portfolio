@@ -12,7 +12,7 @@ export default async function reqs(searchTerm: string, setResult: any) {
   }
 }
 
-export async function componentDidMount(json: object) {
+export async function findbook(json: object) {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },

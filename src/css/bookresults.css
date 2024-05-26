@@ -1,6 +1,5 @@
 body{
   background-color: rgb(14,17,22);
-  font-family: 'Inter';
 }
 .results{
   display: grid;
@@ -8,7 +7,6 @@ body{
   align-items: center;
   justify-content: center;
   column-gap: 5vw;
-  font-family: 'Inter';
   margin-right: 5vw;
 }
 
@@ -19,8 +17,10 @@ body{
 .title{
   color: white;
   margin-bottom: 0;
+  font-family: 'Inter';
 }
 .author{
   margin-top: 0;
   color: grey;
+  font-family: 'Inter';
 }

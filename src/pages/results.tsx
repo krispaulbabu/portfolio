@@ -1,15 +1,13 @@
 import { useRouter } from "next/router";
 import { stringify } from "querystring";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import "/src/css/bookresults.css";
 
 const ResultsPage = () => {
   const router = useRouter();
-  const data = stringify(router.query); // 'data' is the name of the query parameter
+  const data = stringify(router.query); 
   let results=[{}]
 
-  // Optionally parse the data if it's in JSON format
 
   if(data!=""){
     results = JSON.parse(decodeURIComponent(data).substring(7));

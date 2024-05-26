@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect,useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
 import ReactDOM from "react-dom/client";
 import { Input } from "@mui/material";
@@ -8,13 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import renderCollection from "@/functions/bookfinder/renderCollection";
 import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
-
-
-
 import "/src/css/bookfinder.css";
-
-// React.useLayoutEffect = React.useEffect 
-React.useEffect= React.useLayoutEffect
 
 let bookCollection = new Array();
 
@@ -25,11 +19,10 @@ export default function Bookfinder() {
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
   const [idRatings, setIdRatings] = useState<Record<string, number>>({});
+  const [spinner, setSpinner] = useState("nospin");
 
   const rootRef = useRef<null | ReactDOM.Root>(null);
   const root = rootRef.current;
-
-
 
   function setCollectionCss() {
     if (collection == "collection" && root != null) {
@@ -40,28 +33,15 @@ export default function Bookfinder() {
     }
   }
 
-  const handleRatingChange = (id: string, value: number | null) => {
+  const handleRatingChange = async (id: string, value: number | null) => {
     setIdRatings((prevIdRatings: any) => ({
       ...prevIdRatings,
       [id]: value || 1,
     }));
   };
 
-  useEffect(() => {
-    if (root != null) {
-      root.render(
-        <>
-          {renderCollection(
-            bookCollection,
-            book,
-            idRatings,
-            setSelected,
-            setIdRatings,
-            handleRatingChange
-          )}
-        </>
-      );
-    }
+  useLayoutEffect(() => {
+
     if (book != null) {
       if (!bookCollection.includes(book)) {
         bookCollection = [...bookCollection, book];
@@ -75,10 +55,29 @@ export default function Bookfinder() {
         document.getElementsByClassName("collection")[0] as HTMLElement
       );
     }
+    if (root != null) {
+      root.render(
+        <>
+          {renderCollection(
+            bookCollection,
+            book,
+            idRatings,
+            spinner,
+            setSpinner,
+            setSelected,
+            setIdRatings,
+            handleRatingChange
+          )}
+        </>
+      );
+    }
   }, [book,idRatings]);
   
   return (
     <>
+    <div id={spinner}>
+      <div className="lds-ripple"><div></div><div></div></div>
+    </div>
       <div className="bookFinder">
         <label id="quote">
           “Beauty is about finding the right fit, the most natural fit. To be

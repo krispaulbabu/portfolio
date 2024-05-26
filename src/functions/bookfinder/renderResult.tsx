@@ -41,6 +41,7 @@ export default function renderResult(result: any, setSelected: any) {
               arrow
             >
               <Image
+                
                 alt="book cover image"
                 height={600}
                 width={470}

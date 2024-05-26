@@ -1,23 +1,26 @@
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { Rating } from "@mui/material";
-import { componentDidMount } from "./reqs";
+import { findbook } from "./reqs";
 import Image from "next/image";
 import toTitleCase from "./titleCase";
 import Router from "next/router";
+import { useEffect } from "react";
 
 export default function renderCollection(
-  bookCollection: any,
-  book: any,
-  idRatings: any,
-  setSelected: any,
-  setIdRatings: any,
-  handleRatingChange: any
+  bookCollection:any,
+  book:any,
+  idRatings:any,
+  spinner:any,
+  setSpinner:any,
+  setSelected:any,
+  setIdRatings:any,
+  handleRatingChange:any
 ) {
-  let results = {};
-
+  
   function handleFetchAndNavigate(bookCollection:any) {
-    componentDidMount(bookCollection).then(result => {
+    setSpinner("spin")
+    findbook(bookCollection).then(result => {
       Router.push({
         pathname: '/results',
         query: { result: JSON.stringify(result) } 
@@ -100,13 +103,8 @@ export default function renderCollection(
                 value={idRatings[books["id"]] || 1}
                 precision={1}
                 onChange={(event, value) => {
-                  bookCollection["rating"] = value;
+                  books["rating"] = value;
                   handleRatingChange(books["id"], value);
-                  for (let i = 0; i < bookCollection.length; i++) {
-                    if (bookCollection[i]["id"] == books["id"]) {
-                      bookCollection[i]["rating"] = value;
-                    }
-                  }
                 }}
               />
             </div>
