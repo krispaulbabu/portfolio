@@ -8,6 +8,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: 'https://bookfinder.krispaulbabu.com',
+        destination: '/bookfinder',
+      },
+    ]
+  },
   
 }
 
