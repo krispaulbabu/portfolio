@@ -11,8 +11,8 @@ const nextConfig = {
   rewrites() {
     return [
       {
-        source: 'bookfinder.krispaulbabu.com',
-        destination: '/bookfinder',
+        source: '/bookfinder',
+        destination: 'https://krispaulbabu.com/bookfinder',
       },
     ]
   }
