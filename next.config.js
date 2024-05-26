@@ -11,10 +11,16 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: 'https://bookfinder.krispaulbabu.com',
-        destination: '/bookfinder',
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'bookfinder.krispaulbabu.com',
+          },
+        ],
+        destination: '/bookfinder/:path*',
       },
-    ]
+    ];
   },
   
 }
