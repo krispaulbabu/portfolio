@@ -1,5 +1,14 @@
 {
-  "redirects": [
-    { "source": "https://bookfinder.krispaulbabu.com", "destination": "https://krispaulbabu.com/bookfinder" }
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "https://bookfinder.krispaulbabu.com"
+        }
+      ],
+      "destination": "https://bookfinder.com/bookfinder"
+    }
   ]
 }
