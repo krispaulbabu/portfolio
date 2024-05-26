@@ -8,14 +8,6 @@ const nextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/bookfinder',
-        destination: '/bookfinder', 
-      },
-    ];
-  },
   async redirects() {
     return [
       {
