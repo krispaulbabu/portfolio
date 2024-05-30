@@ -252,6 +252,7 @@ body {
   height: 40vh;
   width: 15vw;
   border-radius: .5vw;
+  transition: 0.5s;
 }
 
 .bookcover:hover{
@@ -259,9 +260,46 @@ body {
   margin-top: 5vh;
   height: 40vh;
   width: 15vw;
-  border-radius: .2vw;
+  border-radius: .5vw;
+  transition: 0.5s;
+}
+
+.bookcover:hover + .bookbuttons{
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.bookbuttons{
+  margin-top: -23.5vh;
+  margin-left: 3vw;
+  display: grid;
+  grid-template-columns: .1fr .1fr .1fr;
+  column-gap: 1vw;
+  position: absolute;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.bookbuttons:hover{
+  opacity: 1;
+}
+
+.addcircle{
+  background-color: rgb(57, 156, 57);
+}
+
+.removecircle{
+  background-color: rgb(186, 48, 48);
+}
+
+.importcontacts{
+  background-color: rgb(232, 232, 40);
+}
+
+.addcircle:hover, .removecircle:hover, .importcontacts:hover{
   cursor: pointer;
 }
+
 
 .booktitle{
   width:15vw;

@@ -8,14 +8,17 @@ import Router from "next/router";
 import { useEffect } from "react";
 
 export default function renderCollection(
-  bookCollection:any,
-  book:any,
-  idRatings:any,
-  spinner:any,
-  setSpinner:any,
-  setSelected:any,
-  setIdRatings:any,
-  handleRatingChange:any
+  bookCollection?:any,
+  book?:any,
+  idRatings?:any,
+  spinner?:any,
+  setSpinner?:any,
+  setSelected?:any,
+  setIdRatings?:any,
+  handleRatingChange?:any,
+  setButtonStates?:any,
+  toggleButtonState?:any
+
 ) {
   
   function handleFetchAndNavigate(bookCollection:any) {
@@ -90,7 +93,10 @@ export default function renderCollection(
                     fontSize: "1.5vh",
                     cursor: "pointer",
                   }}
-                  onClick={() => setSelected(books)}
+                  onClick={() => {
+                    setSelected(books)
+                    toggleButtonState(books["id"])
+                  }}
                 >
                   Delete
                 </Button>

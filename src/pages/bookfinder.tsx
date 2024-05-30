@@ -1,4 +1,4 @@
-import React, { useEffect,useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
 import ReactDOM from "react-dom/client";
 import { Input } from "@mui/material";
@@ -14,15 +14,24 @@ let bookCollection = new Array();
 
 export default function Bookfinder() {
   const [result, setResult] = useState([]);
-  const [collectionResult, setCResult] =useState([]);
   const [input, setInput] = useState("");
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
   const [idRatings, setIdRatings] = useState<Record<string, number>>({});
+  const [buttonStates, setButtonStates] = useState<{ [id: string]: boolean }>(
+    {}
+  );
   const [spinner, setSpinner] = useState("nospin");
 
   const rootRef = useRef<null | ReactDOM.Root>(null);
   const root = rootRef.current;
+
+  const toggleButtonState = (id: string) => {
+    setButtonStates((prev: any) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   function setCollectionCss() {
     if (collection == "collection" && root != null) {
@@ -41,7 +50,6 @@ export default function Bookfinder() {
   };
 
   useLayoutEffect(() => {
-
     if (book != null) {
       if (!bookCollection.includes(book)) {
         bookCollection = [...bookCollection, book];
@@ -66,18 +74,23 @@ export default function Bookfinder() {
             setSpinner,
             setSelected,
             setIdRatings,
-            handleRatingChange
+            handleRatingChange,
+            setButtonStates,
+            toggleButtonState
           )}
         </>
       );
     }
-  }, [book,idRatings]);
-  
+  }, [book, idRatings]);
+
   return (
     <>
-    <div id={spinner}>
-      <div className="lds-ripple"><div></div><div></div></div>
-    </div>
+      <div id={spinner}>
+        <div className="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div className="bookFinder">
         <label id="quote">
           “Beauty is about finding the right fit, the most natural fit. To be
@@ -90,12 +103,12 @@ export default function Bookfinder() {
             disableUnderline
             startAdornment={
               <Button
-              disableRipple
+                disableRipple
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "transparent",
                   cursor: "pointer",
-                  outline:"none"
+                  outline: "none",
                 }}
                 onClick={() => reqs(input, setResult)}
               >
@@ -104,7 +117,7 @@ export default function Bookfinder() {
             }
             endAdornment={
               <Button
-              disableRipple
+                disableRipple
                 onClick={() => {
                   let element = document.getElementById("search");
                   if (
@@ -119,7 +132,7 @@ export default function Bookfinder() {
                   backgroundColor: "transparent",
                   borderWidth: 0,
                   cursor: "pointer",
-                  outline:"none"
+                  outline: "none",
                 }}
               >
                 <CloseIcon style={{ color: "white" }} />
@@ -154,9 +167,16 @@ export default function Bookfinder() {
               }}
             ></AutoStoriesIcon>
           </Button>
-          {renderResult(result, setSelected)}
-          <div id={collection} className="collection">
-          </div>
+          {renderResult(
+            result,
+            book,
+            setSelected,
+            bookCollection,
+            setButtonStates,
+            buttonStates,
+            toggleButtonState
+          )}
+          <div id={collection} className="collection"></div>
         </div>
       </div>
     </>
