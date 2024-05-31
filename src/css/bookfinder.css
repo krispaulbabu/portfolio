@@ -286,18 +286,107 @@ body {
 
 .addcircle{
   background-color: rgb(57, 156, 57);
+  z-index: 1;
 }
 
 .removecircle{
   background-color: rgb(186, 48, 48);
+  z-index: 1;
 }
 
 .importcontacts{
   background-color: rgb(232, 232, 40);
+  z-index: 1;
 }
 
 .addcircle:hover, .removecircle:hover, .importcontacts:hover{
   cursor: pointer;
+}
+
+.modal{
+  position: fixed;
+  background: rgba(14, 17, 22, 0.625);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 10px;
+  top: 0;
+  height: 70vh;
+  width: 65vw;
+  margin-left: 14.85vw;
+  margin-top: 10vh;
+  z-index: 2;
+  transition: 1s;
+  padding-bottom: 5vh;
+}
+
+.modaltitle{
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 5vh;
+  margin-left: 3vw;
+
+}
+
+.modalImageAndTitle{
+  display: grid;
+  grid-template-columns: .1fr .1fr;
+}
+
+.modalcontent{
+  overflow-x: hidden;
+  grid-template-columns: .1fr 1fr;
+}
+
+.modalDesc{
+  /* margin-top: -1vh; */
+  font-weight: 300;
+  color: #c0c6d2;
+  margin-left: 3vw;
+  margin-bottom: 2vh;
+  width: 40vw;
+}
+
+.modalMaturityRating{
+  margin-left: 3vw;
+}
+
+.categories{
+  color: gray;
+  font-size: .9em;
+}
+
+.pagecount{
+  font-size: .9em;
+  color: gray;
+}
+
+.closeButton{
+  background-color: rgba(97, 103, 217, 0.367);
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  border-width: 0px;
+  border-radius: 3px;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 18%;
+  height: 5vh;
+  width: 14vw;
+}
+
+.modalauthor{
+  margin-top: -.05vh;
+  margin-left: 3vw;
+  font-weight: 100;
+}
+
+.modalImage{
+  height: 40vh;
+  width: 14vw;
+  border-radius: 10px;
+  margin-top: 10vh;
+  margin-left: 3vw;
+  transition: 0.5s;
 }
 
 
@@ -333,6 +422,7 @@ body {
 #spin{
   visibility: visible;
   margin: 0;
+  margin-top: -2vh;
   padding: 0;
   height: 100vh;
   width: 100vw;

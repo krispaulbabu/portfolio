@@ -1,0 +1,106 @@
+{
+  "kind": "books#volume",
+  "id": "kIJ6DwAAQBAJ",
+  "etag": "8vc4vXYxFPI",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/kIJ6DwAAQBAJ",
+  "volumeInfo": {
+    "title": "The Last Olympian: The Graphic Novel (Percy Jackson Book 5)",
+    "authors": ["Rick Riordan"],
+    "publisher": "Penguin UK",
+    "publishedDate": "2019-08-15",
+    "description": "Percy Jackson and the Last Olympian is the fifth awesome adventure in Rick Riordan's top-ten bestselling series. Half Boy. Half God. ALL Hero. Most people get presents on their sixteenth birthday. I get a prophecy that could save or destroy the world. It happens when you're the son of Poseidon, God of the Sea.According to an ancient prophecy, I turn sixteen and the fate of the entire world is on me. But no pressure. Now Kronos, Lord of the Titans, is beginning his attack on New York City. And the dreaded monster Typhon is also heading our way. So it's me and forty of my demi-god friends versus untold evil . . . ________ 'Riordan takes the reader back to the stories we love; then shakes the cobwebs out of them' Eoin Colfer 'Witty and inspired. Gripping, touching and deliciously satirical' The Times 'Puns, jokes and subtle wit, alongside a gripping storyline' Telegraph 'Perfectly paced, with electrifying moments chasing each other like heartbeats' New York Times 'It's Buffy meets Artemis Fowl. Thumbs up' Sunday Times 'Funny . . . very exciting . . . but it's the storytelling that will get readers hooked. After all, this is the stuff of legends' Guardian __________ The Percy Jackson series: Percy Jackson and the Lightning Thief Percy Jackson and the Sea of Monsters Percy Jackson and the Titan's Curse Percy Jackson and the Battle of the Labyrinth Percy Jackson and the Last Olympian Percy Jackson: The Demigod Files The Heroes of Olympus series: The Lost Hero The Son Of Neptune The Mark of Athena The Heroes of Olympus: The Demigod Files The Kane Chronicles series: The Red Pyramid The Throne of Fire The Serpent's Shadow The Magnus Chase series: Magnus Chase and the Sword of Summer Magnus Chase and the Hammer of Thor Magnus Chase and the Ship of the Dead The Trials of Apollo series: The Dark Prophecy The Hidden Oracle The Burning Maze",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9780241342916"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "0241342910"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": true
+    },
+    "pageCount": 128,
+    "printType": "BOOK",
+    "categories": ["Juvenile Fiction"],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.4.4.0.preview.3",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=kIJ6DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=kIJ6DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com.au/books?id=kIJ6DwAAQBAJ&printsec=frontcover&dq=percy+jackson&hl=&cd=4&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=kIJ6DwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=kIJ6DwAAQBAJ",
+    "seriesInfo": {
+      "kind": "books#volume_series_info",
+      "shortSeriesBookTitle": "The Last Olympian: The Graphic Novel (Percy Jackson Book 5)",
+      "bookDisplayNumber": "5",
+      "volumeSeries": [
+        {
+          "seriesId": "zrYtGwAAABDirM",
+          "seriesBookType": "COLLECTED_EDITION",
+          "orderNumber": 5
+        }
+      ]
+    }
+  },
+  "saleInfo": {
+    "country": "AU",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+      "amount": 14.99,
+      "currencyCode": "AUD"
+    },
+    "retailPrice": {
+      "amount": 14.99,
+      "currencyCode": "AUD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=kIJ6DwAAQBAJ&rdid=book-kIJ6DwAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+      {
+        "finskyOfferType": 1,
+        "listPrice": {
+          "amountInMicros": 14990000,
+          "currencyCode": "AUD"
+        },
+        "retailPrice": {
+          "amountInMicros": 14990000,
+          "currencyCode": "AUD"
+        },
+        "giftable": true
+      }
+    ]
+  },
+  "accessInfo": {
+    "country": "AU",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.com.au/books/download/The_Last_Olympian_The_Graphic_Novel_Perc-sample-epub.acsm?id=kIJ6DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.com.au/books/download/The_Last_Olympian_The_Graphic_Novel_Perc-sample-pdf.acsm?id=kIJ6DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=kIJ6DwAAQBAJ&hl=&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+    "textSnippet": "After all, this is the stuff of legends&#39; Guardian __________ The Percy Jackson series: Percy Jackson and the Lightning Thief Percy Jackson and the Sea of Monsters Percy Jackson and the Titan&#39;s Curse Percy Jackson and the Battle of the ..."
+  }
+}
