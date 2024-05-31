@@ -18,6 +18,7 @@ export default function Bookfinder() {
   const [book, setSelected] = useState(null);
   const [collection, setCollection] = useState("collectionHidden");
   const [idRatings, setIdRatings] = useState<Record<string, number>>({});
+  const [modalStates, setModalState] = useState<{ [id: string]: boolean }>({});
   const [buttonStates, setButtonStates] = useState<{ [id: string]: boolean }>(
     {}
   );
@@ -32,6 +33,14 @@ export default function Bookfinder() {
       [id]: !prev[id],
     }));
   };
+
+  const toggleModal = (id: string) => {
+    setModalState((prev: any) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
 
   function setCollectionCss() {
     if (collection == "collection" && root != null) {
@@ -174,7 +183,9 @@ export default function Bookfinder() {
             bookCollection,
             setButtonStates,
             buttonStates,
-            toggleButtonState
+            toggleButtonState,
+            toggleModal, 
+            modalStates
           )}
           <div id={collection} className="collection"></div>
         </div>

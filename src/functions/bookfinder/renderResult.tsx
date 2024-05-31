@@ -3,7 +3,6 @@ import Image from "next/image";
 import toTitleCase from "./titleCase";
 import Fab from "@mui/material/Fab";
 import { Add, Remove, LocalLibrary } from "@mui/icons-material";
-import { useDisclosure } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Rating from "@mui/material/Rating";
 import {
@@ -22,18 +21,11 @@ export default function renderResult(
   bookCollection: any,
   setButtonStates: any,
   buttonStates: any,
-  toggleButtonState: any
+  toggleButtonState: any,
+  toggleModal:any,
+  modalStates:any
 ) {
-  const [modalStates, setModalState] = useState<{ [id: string]: boolean }>({});
 
-  const toggleModal = (id: string) => {
-    setModalState((prev: any) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   if (typeof result !== "undefined" && result.length !== 0) {
     return (
       <div id="bookContainer">
