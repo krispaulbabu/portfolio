@@ -7,6 +7,7 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 
 
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <>
+    <Analytics/>
       <div className="everything">
         <div className="hpBody" id="home">
           <div id="hamburger">

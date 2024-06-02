@@ -1,11 +1,9 @@
 import { Button } from "@nextui-org/react";
-import Link from "next/link";
 import { Rating } from "@mui/material";
 import { findbook } from "./reqs";
 import Image from "next/image";
 import toTitleCase from "./titleCase";
 import Router from "next/router";
-import { useEffect } from "react";
 
 export default function renderCollection(
   bookCollection?: any,

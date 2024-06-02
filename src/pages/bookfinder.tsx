@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@nextui-org/react";
 import ReactDOM from "react-dom/client";
 import { Input } from "@mui/material";
@@ -9,6 +9,7 @@ import renderCollection from "@/functions/bookfinder/renderCollection";
 import renderResult from "@/functions/bookfinder/renderResult";
 import reqs from "@/functions/bookfinder/reqs";
 import "/src/css/bookfinder.css";
+import { Analytics } from "@vercel/analytics/react"
 
 let bookCollection = new Array();
 
@@ -94,6 +95,7 @@ export default function Bookfinder() {
 
   return (
     <>
+    <Analytics/>
       <div id={spinner}>
         <div className="lds-ripple">
           <div></div>

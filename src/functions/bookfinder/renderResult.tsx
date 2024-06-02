@@ -3,8 +3,6 @@ import Image from "next/image";
 import toTitleCase from "./titleCase";
 import Fab from "@mui/material/Fab";
 import { Add, Remove, LocalLibrary } from "@mui/icons-material";
-import { useEffect, useState } from "react";
-import Rating from "@mui/material/Rating";
 import {
   Modal,
   ModalContent,
