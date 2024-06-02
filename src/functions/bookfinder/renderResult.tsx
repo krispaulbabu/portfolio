@@ -22,10 +22,9 @@ export default function renderResult(
   setButtonStates: any,
   buttonStates: any,
   toggleButtonState: any,
-  toggleModal:any,
-  modalStates:any
+  toggleModal: any,
+  modalStates: any
 ) {
-
   if (typeof result !== "undefined" && result.length !== 0) {
     return (
       <div id="bookContainer">
@@ -65,6 +64,7 @@ export default function renderResult(
             >
               <div>
                 <Image
+                  unoptimized
                   alt="book cover image"
                   height={600}
                   width={470}
@@ -105,16 +105,13 @@ export default function renderResult(
               motionProps={{
                 variants: {
                   enter: {
-                    scale: 1,
+                    scale:1,
                     opacity: 1,
-                    transition: {
-                    },
+                    transition: {},
                   },
                   exit: {
-                    scale: 0.0,
                     opacity: 0,
-                    transition: {
-                    },
+                    transition: {},
                   },
                 },
               }}
@@ -129,6 +126,7 @@ export default function renderResult(
                 <div className="modalImageAndTitle">
                   <div>
                     <Image
+                      unoptimized
                       alt="book cover image"
                       height={300}
                       width={235}
@@ -165,12 +163,17 @@ export default function renderResult(
                     {/* <div className="modalMaturityRating">
                       {values["volumeInfo"]["maturityRating"]}
                     </div> */}
-                    <label className="categories" style={{marginLeft:"3vw"}}>
-                      Genre: {values["volumeInfo"]["categories"]
+                    <label className="categories" style={{ marginLeft: "3vw" }}>
+                      Genre:{" "}
+                      {values["volumeInfo"]["categories"]
                         ? values["volumeInfo"]["categories"]
-                        : "No categories"} | 
+                        : "No categories"}{" "}
+                      |
                     </label>
-                    <label className="pagecount"> Page count: {values["volumeInfo"]["pageCount"]}</label>
+                    <label className="pagecount">
+                      {" "}
+                      Page count: {values["volumeInfo"]["pageCount"]}
+                    </label>
                   </div>
                 </div>
                 <ModalFooter></ModalFooter>

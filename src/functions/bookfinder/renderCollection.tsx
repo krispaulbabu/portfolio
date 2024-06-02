@@ -8,29 +8,29 @@ import Router from "next/router";
 import { useEffect } from "react";
 
 export default function renderCollection(
-  bookCollection?:any,
-  book?:any,
-  idRatings?:any,
-  spinner?:any,
-  setSpinner?:any,
-  setSelected?:any,
-  setIdRatings?:any,
-  handleRatingChange?:any,
-  setButtonStates?:any,
-  toggleButtonState?:any
-
+  bookCollection?: any,
+  book?: any,
+  idRatings?: any,
+  spinner?: any,
+  setSpinner?: any,
+  setSelected?: any,
+  setIdRatings?: any,
+  handleRatingChange?: any,
+  setButtonStates?: any,
+  toggleButtonState?: any
 ) {
-  
-  function handleFetchAndNavigate(bookCollection:any) {
-    setSpinner("spin")
-    findbook(bookCollection).then(result => {
-      Router.push({
-        pathname: '/results',
-        query: { result: JSON.stringify(result) } 
+  function handleFetchAndNavigate(bookCollection: any) {
+    setSpinner("spin");
+    findbook(bookCollection)
+      .then((result) => {
+        Router.push({
+          pathname: "/results",
+          query: { result: JSON.stringify(result) },
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
-    }).catch(error => {
-      console.error('Error fetching data:', error);
-    });
   }
 
   if (bookCollection.length != 0) {
@@ -46,6 +46,7 @@ export default function renderCollection(
               <div id="_instance">
                 <div id="collectionBook">
                   <Image
+                    unoptimized
                     alt="book cover image"
                     height={600}
                     width={470}
@@ -94,8 +95,8 @@ export default function renderCollection(
                     cursor: "pointer",
                   }}
                   onClick={() => {
-                    setSelected(books)
-                    toggleButtonState(books["id"])
+                    setSelected(books);
+                    toggleButtonState(books["id"]);
                   }}
                 >
                   Delete
@@ -110,6 +111,8 @@ export default function renderCollection(
                 precision={1}
                 onChange={(event, value) => {
                   books["rating"] = value;
+                  // console.log(bookCollection["rating"])
+                  console.log(bookCollection[0]["rating"]);
                   handleRatingChange(books["id"], value);
                 }}
               />
@@ -117,8 +120,7 @@ export default function renderCollection(
           ))}
           <button
             onClick={() => {
-              handleFetchAndNavigate(bookCollection)
-
+              handleFetchAndNavigate(bookCollection);
             }}
             style={{
               cursor: "pointer",
