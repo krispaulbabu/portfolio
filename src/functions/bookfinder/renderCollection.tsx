@@ -60,23 +60,12 @@ export default function renderCollection(
                   ></Image>
                   <div>
                     <h1
-                      style={{
-                        fontFamily: "inter",
-                        fontWeight: "500",
-                        fontSize: "2vh",
-                        marginRight: "1vw",
-                        width: "15vw",
-                      }}
+                    className="collectiontext"
                     >
                       {toTitleCase(books["volumeInfo"]["title"])}
                     </h1>
                     <p
-                      style={{
-                        fontWeight: "100",
-                        fontSize: "1.8vh",
-                        width: "15vw",
-                        transform: "translateY(-10px)",
-                      }}
+                    className="collectionauthor"
                     >
                       {typeof books["volumeInfo"]["authors"] != "undefined"
                         ? books["volumeInfo"]["authors"][0]
@@ -120,20 +109,7 @@ export default function renderCollection(
             onClick={() => {
               handleFetchAndNavigate(bookCollection);
             }}
-            style={{
-              cursor: "pointer",
-              color: "white",
-              borderWidth: "0px",
-              fontWeight: "1000",
-              fontSize: "1.5vh",
-              height: "5vh",
-              width: "25vw",
-              marginLeft: "4.5vh",
-              backgroundColor: "rgba(97, 103, 217, 0.402)",
-              borderRadius: "1vh",
-              marginTop: "2vh",
-              marginBottom: "5vh",
-            }}
+            id="findbookbutton"
           >
             Find Books
           </button>

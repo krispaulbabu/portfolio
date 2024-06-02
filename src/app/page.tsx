@@ -67,7 +67,7 @@ export default function Home() {
           <Image
             className="welcomeImage"
             alt="welcome image"
-            src="/images/welcome.svg"
+            src="/images/mainpage/welcome.svg"
             height={500}
             width={500}
             style={{}}
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <Image
             className="descImage"
-            src="/images/Innovation-pana.svg"
+            src="/images/mainpage/Innovation-pana.svg"
             alt="corpo art of a woman in a park"
             height={10}
             width={10}
@@ -120,7 +120,7 @@ export default function Home() {
                 width={100}
                 className="projectImage"
                 alt="an image of the airbnb logo"
-                src="/images/airbnb.png"
+                src="/images/mainpage/airbnb.png"
                 style={{
                   borderRadius: "20%",
                 }}
@@ -141,7 +141,7 @@ export default function Home() {
                 width={100}
                 className="projectImage"
                 alt="An image of a library"
-                src="/images/library.png"
+                src="/images/mainpage/library.png"
                 style={{
                   borderRadius: "20%",
                 }}
@@ -168,7 +168,7 @@ export default function Home() {
             alt="Two guys talking"
             width={100}
             height={100}
-            src={"/images/contact.svg"}
+            src={"/images/mainpage/contact.svg"}
           ></Image>
           <div id="contactInfo">
             <LocalPhoneIcon className="contactIcon" id="callIcon" />

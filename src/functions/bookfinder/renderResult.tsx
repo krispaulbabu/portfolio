@@ -3,6 +3,7 @@ import Image from "next/image";
 import toTitleCase from "./titleCase";
 import Fab from "@mui/material/Fab";
 import { Add, Remove, LocalLibrary } from "@mui/icons-material";
+
 import {
   Modal,
   ModalContent,
@@ -103,7 +104,7 @@ export default function renderResult(
               motionProps={{
                 variants: {
                   enter: {
-                    scale:1,
+                    scale: 1,
                     opacity: 1,
                     transition: {},
                   },
@@ -177,6 +178,7 @@ export default function renderResult(
                 <ModalFooter></ModalFooter>
               </ModalContent>
             </Modal>
+
             <label className="booktitle">
               {toTitleCase(values["volumeInfo"]["title"])}
             </label>
