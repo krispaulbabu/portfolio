@@ -7,23 +7,24 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
-
+import { FaPython, FaReact } from "react-icons/fa";
+import { SiFlask } from "react-icons/si";
+import { IoLogoCss3,IoLogoTableau } from "react-icons/io5";
+import { IoLogoJavascript } from "react-icons/io";
 
 
 
 export default function Home() {
   const [menu, setMenu] = useState("grid");
-  
-  useEffect(()=> {
-    window.addEventListener('resize', ()=> {
-        console.log("condition visited")
-        if(window.innerWidth>=1000){
-          setMenu("grid")
-        }
-    })
-  }, [])
 
-
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      console.log("condition visited");
+      if (window.innerWidth >= 1000) {
+        setMenu("grid");
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -111,56 +112,49 @@ export default function Home() {
         </div>
         <div className="projects" id="projects">
           <div className="project">
-            <a
-              href="https://public.tableau.com/app/profile/kris.paul/viz/AirBnBdata_17057060393650/Ratingsandpricebyneighbourhod"
-              target="_blank"
-            >
+            <Link style={{ cursor: "pointer" }} href="/bookfinder">
               <Image
-                height={100}
-                width={100}
                 className="projectImage"
-                alt="an image of the airbnb logo"
-                src="/images/mainpage/airbnb.png"
-                style={{
-                  borderRadius: "20%",
-                }}
-              />
-
-              <div className="overlay">
-                <h1 className="text">AirBnB ED</h1>
-                <p className="desc">
-                  An exploratory data analysis on an AirBnB dataset from Kaggle.
-                </p>
+                width={1000}
+                height={1000}
+                alt="An image of my bookfinder webpage"
+                src="/images/mainpage/bookfinder-snapshot.png"
+              ></Image>
+            </Link>
+            <p className="projectTitle">Book Finding Website</p>
+            <div style={{display:"flex", alignItems:"center"}}>
+              <p className="projectFrameworks">Frameworks used: </p>
+              <div style={{display:"flex"}}>
+              <FaPython className="frameworkIcons" size="25" color="white"/>
+              <FaReact className="frameworkIcons" size="25" color="white"/>
+              <SiFlask className="frameworkIcons" size="25" color="white"/>
+              <IoLogoCss3 className="frameworkIcons" size="25" color="white"/>
+              <IoLogoJavascript className="frameworkIcons" size="25" color="white"/>
               </div>
-            </a>
+            </div>
           </div>
           <div className="project">
-            <Link href="/bookfinder">
+            <Link
+              style={{ cursor: "pointer" }}
+              href="https://public.tableau.com/app/profile/kris.paul/viz/AirBnBdata_17057060393650/Ratingsandpricebyneighbourhod"
+            >
               <Image
-                height={100}
-                width={100}
                 className="projectImage"
-                alt="An image of a library"
-                src="/images/mainpage/library.png"
-                style={{
-                  borderRadius: "20%",
-                }}
-              />
-
-              <div className="overlay">
-                <h1 className="text">Book finder</h1>
-                <p className="desc">
-                  A website that uses collaborative filtering to find you books.
-                </p>
-              </div>
+                width={1000}
+                height={1000}
+                alt="An image of my bookfinder webpage"
+                src="/images/mainpage/tableau-snapshot.png"
+              ></Image>
             </Link>
+            <p className="projectTitle">Tableau AirBnB data exploration</p>
+            <div style={{display:"flex", alignItems:"center"}}>
+              <p className="projectFrameworks">Frameworks used: </p>
+              <div style={{display:"flex"}}>
+              <FaPython className="frameworkIcons" size="25" color="white"/>
+              <IoLogoTableau className="frameworkIcons" size="25" color="white"/>
+              </div>
+            </div>
           </div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
         </div>
         <div className="contact" id="contact">
           <Image
