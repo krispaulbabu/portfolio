@@ -9,9 +9,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
 import { FaPython, FaReact } from "react-icons/fa";
 import { SiFlask } from "react-icons/si";
-import { IoLogoCss3,IoLogoTableau } from "react-icons/io5";
+import { IoLogoCss3, IoLogoTableau } from "react-icons/io5";
 import { IoLogoJavascript } from "react-icons/io";
-
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 
 export default function Home() {
@@ -24,6 +24,8 @@ export default function Home() {
         setMenu("grid");
       }
     });
+
+    
   }, []);
 
   return (
@@ -110,10 +112,11 @@ export default function Home() {
             style={{ marginRight: "5vw", marginTop: "4vh" }}
           />
         </div>
-        <div className="projects" id="projects">
-          <div className="project">
+        <ScrollContainer className="projects">
+          <div className="project" >
             <Link style={{ cursor: "pointer" }} href="/bookfinder">
               <Image
+                unoptimized
                 className="projectImage"
                 width={1000}
                 height={1000}
@@ -122,14 +125,22 @@ export default function Home() {
               ></Image>
             </Link>
             <p className="projectTitle">Book Finding Website</p>
-            <div style={{display:"flex", alignItems:"center"}}>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <p className="projectFrameworks">Frameworks used: </p>
-              <div style={{display:"flex"}}>
-              <FaPython className="frameworkIcons" size="25" color="white"/>
-              <FaReact className="frameworkIcons" size="25" color="white"/>
-              <SiFlask className="frameworkIcons" size="25" color="white"/>
-              <IoLogoCss3 className="frameworkIcons" size="25" color="white"/>
-              <IoLogoJavascript className="frameworkIcons" size="25" color="white"/>
+              <div style={{ display: "flex" }}>
+                <FaPython className="frameworkIcons" size="25" color="white" />
+                <FaReact className="frameworkIcons" size="25" color="white" />
+                <SiFlask className="frameworkIcons" size="25" color="white" />
+                <IoLogoCss3
+                  className="frameworkIcons"
+                  size="25"
+                  color="white"
+                />
+                <IoLogoJavascript
+                  className="frameworkIcons"
+                  size="25"
+                  color="white"
+                />
               </div>
             </div>
           </div>
@@ -139,6 +150,7 @@ export default function Home() {
               href="https://public.tableau.com/app/profile/kris.paul/viz/AirBnBdata_17057060393650/Ratingsandpricebyneighbourhod"
             >
               <Image
+                unoptimized
                 className="projectImage"
                 width={1000}
                 height={1000}
@@ -147,15 +159,19 @@ export default function Home() {
               ></Image>
             </Link>
             <p className="projectTitle">Tableau AirBnB data exploration</p>
-            <div style={{display:"flex", alignItems:"center"}}>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <p className="projectFrameworks">Frameworks used: </p>
-              <div style={{display:"flex"}}>
-              <FaPython className="frameworkIcons" size="25" color="white"/>
-              <IoLogoTableau className="frameworkIcons" size="25" color="white"/>
+              <div style={{ display: "flex" }}>
+                <FaPython className="frameworkIcons" size="25" color="white" />
+                <IoLogoTableau
+                  className="frameworkIcons"
+                  size="25"
+                  color="white"
+                />
               </div>
             </div>
           </div>
-        </div>
+        </ScrollContainer>
         <div className="contact" id="contact">
           <Image
             id="contactImage"
