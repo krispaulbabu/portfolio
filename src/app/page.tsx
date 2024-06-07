@@ -113,7 +113,7 @@ export default function Home() {
           />
         </div>
         <ScrollContainer className="projects">
-          <div className="project" >
+          <div className="project">
             <Link style={{ cursor: "pointer" }} href="/bookfinder">
               <Image
                 unoptimized

@@ -168,10 +168,9 @@ li:hover {
   height: 25vw;
   margin-bottom: 3vh;
   transition: 0.5s;
-  border: 5px solid transparent;
+  border: 2px solid;
   border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
   border-image-slice: 1;
-  border-width: 2px;
 }
 
 .projectImage:hover {
