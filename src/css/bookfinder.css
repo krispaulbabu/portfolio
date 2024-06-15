@@ -335,17 +335,15 @@ body {
 
 .modal{
   position: fixed;
-  background: rgba(14, 17, 22, 0.625);
-  backdrop-filter: blur(10px);
+  background: rgba(14, 17, 22);
   color: white;
   border-radius: 10px;
   top: 0;
   height: 70vh;
-  width: 65vw;
-  margin-left: 14.85vw;
+  width: 70vw;
+  margin-left: 12vw;
   margin-top: 10vh;
   z-index: 2;
-  transition: 1s;
   padding-bottom: 5vh;
 }
 

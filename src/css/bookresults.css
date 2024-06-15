@@ -1,5 +1,6 @@
 body{
   background-color: rgb(14,17,22);
+  font-family: 'Inter';
 }
 .results{
   display: grid;

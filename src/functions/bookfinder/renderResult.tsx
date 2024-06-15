@@ -116,7 +116,7 @@ export default function renderResult(
               }}
               backdrop="blur"
               className="modal"
-              data-backdrop="static"
+              // data-backdrop="static"
               isOpen={modalStates[values.id] || false}
               onClose={() => toggleModal(values.id)}
               hideCloseButton={true}

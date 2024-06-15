@@ -146,9 +146,9 @@ li:hover {
 .projects {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
+  overflow-x: auto;
   height: 100vh;
-  width: 100vw;
+  width: 98.95vw;
   padding-top: 15vh;
   padding-right: 1vw;
   padding-left: 5vw;
@@ -262,7 +262,6 @@ a {
 
 @media only screen and (max-width: 1000px) {
   .hpBody {
-    /* background-image: url("/images/welcome-drawing.svg"); */
     background-size: 300%;
     background-position-x: 43%;
   }
@@ -343,7 +342,7 @@ a {
     row-gap: 2vh;
     column-gap: 5vw;
     align-items: center;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 
   .project {
